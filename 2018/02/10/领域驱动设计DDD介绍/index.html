@@ -172,7 +172,7 @@
 </ol>
 <p>从上面的描述我们可以看出，他完全没有从用户的角度去描述领域模型，而是以领域内的相关事物为出发点，考虑这些事物的本质关联及其变化规律的。上述这段描述完全以货物为中心，把客户看成是货物在某个场景中可能会涉及到的关联角色，如货物会涉及到托运人、收货人、付款人；货物有一个确定的目标，货物会经过一系列列的运输动作到达目的地；其实，我觉得以用户为中心来思考领域模型的思维只是停留在需求的表面，而没有挖掘出真正的需求的本质；我们在做领域建模时需要努力挖掘用户需求的本质，这样才能真正实现用户需求。</p>
 </blockquote>
-<h2 id="领域驱动设计分层架构"><a href="#领域驱动设计分层架构" class="headerlink" title="领域驱动设计分层架构"></a>领域驱动设计分层架构</h2><p><img src="E:\资料库\工作资料\随笔记录\杂货铺\ddd-layer-architecture.png" alt="ddd-layer-architecture"></p>
+<h2 id="领域驱动设计分层架构"><a href="#领域驱动设计分层架构" class="headerlink" title="领域驱动设计分层架构"></a>领域驱动设计分层架构</h2><p><img src="https://raw.githubusercontent.com/baoxielin/md-images/master/ddd-layer-architecture.png" alt="ddd-layer-architecture"></p>
 <ul>
 <li>用户界面/展现层</li>
 </ul>
@@ -193,7 +193,7 @@
 <li>基础设施层</li>
 </ul>
 <p>本层为其他层提供通用的技术能力；提供了层间的通信；为领域层实现持久化机制；总之，基础设施层可以通过架构和框架来支持其他层的技术需求。</p>
-<h2 id="领域驱动设计模式"><a href="#领域驱动设计模式" class="headerlink" title="领域驱动设计模式"></a>领域驱动设计模式</h2><p><img src="E:\资料库\工作资料\随笔记录\杂货铺\ddd-pattern.jpg" alt="ddd-layer-architecture"></p>
+<h2 id="领域驱动设计模式"><a href="#领域驱动设计模式" class="headerlink" title="领域驱动设计模式"></a>领域驱动设计模式</h2><p><img src="https://raw.githubusercontent.com/baoxielin/md-images/master/ddd-pattern.jpg" alt="ddd-pattern"></p>
 <h3 id="关联的设计"><a href="#关联的设计" class="headerlink" title="关联的设计"></a>关联的设计</h3><p>关联本身不是一个模式，但它在领域建模的过程中非常重要，所以需要在探讨各种模式之前，先讨论一下对象之间的关联该如何设计。我觉得对象的关联的设计可以遵循如下的一些原则：</p>
 <ol>
 <li>关联尽量少，对象之间的复杂的关联容易形成对象的关系网，这样对于我们理解和维护单个对象很不利，同时也很难划分对象与对象之间的边界；另外，同时减少关联有助于简化对象之间的遍历。</li>
@@ -317,7 +317,7 @@
 
 </div>
         <footer class="footer">
-    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme by <a href="https://github.com/sanonz/hexo-theme-concise" target="_blank">Concise</a>
+    Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme by <a href="https://github.com/sanonz/hexo-theme-concise" target="_blank">Concise</a>
 </footer>
 
 <script type="text/javascript" src="//s13.cnzz.com/z_stat.php?id=1234567890&amp;web_id=1234567890"></script>
