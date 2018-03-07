@@ -334,7 +334,25 @@
       
         
           
-            <div id="dplayer0" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer0"),"theme":"#FADFA3","loop":true,"video":{"url":"http://home.ustc.edu.cn/~mmmwhy/GEM.mp4","pic":"http://home.ustc.edu.cn/~mmmwhy/GEM.jpg"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
+            <script src="\assets\js\APlayer.min.js"> </script><div id="aplayer0" class="aplayer" style="margin-bottom: 20px;"></div>
+		<script>
+			var ap = new APlayer({
+				element: document.getElementById("aplayer0"),
+				narrow: false,
+				autoplay: false,
+				showlrc: 0,
+				music: {
+					title: "她的睫毛",
+					author: "周杰伦",
+					url: "http://home.ustc.edu.cn/~mmmwhy/%d6%dc%bd%dc%c2%d7%20-%20%cb%fd%b5%c4%bd%de%c3%ab.mp3",
+					pic: "http://home.ustc.edu.cn/~mmmwhy/jay.jpg",
+				}
+			});
+			window.aplayers || (window.aplayers = []);
+			window.aplayers.push(ap);
+		</script>
+<div id="dplayer0" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer0"),"theme":"#FADFA3","loop":true,"video":{"url":"http://home.ustc.edu.cn/~mmmwhy/GEM.mp4","pic":"http://home.ustc.edu.cn/~mmmwhy/GEM.jpg"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
+
           
         
       
@@ -453,7 +471,7 @@
       
         
           
-            <blockquote>
+            <script src="\assets\js\APlayer.min.js"> </script><blockquote>
 <p>作者：金岳霖</p>
 </blockquote>
 <p><img src="https://raw.githubusercontent.com/baoxielin/md-images/master/golden-gate-bridge-wallpaper.jpg" alt=""></p>
@@ -607,7 +625,7 @@
       
         
           
-            <p><img src="https://raw.githubusercontent.com/baoxielin/md-images/master/image-star01.jpg" alt=""></p>
+            <script src="\assets\js\APlayer.min.js"> </script><p><img src="https://raw.githubusercontent.com/baoxielin/md-images/master/image-star01.jpg" alt=""></p>
 <h2 id="存有一个好奇心（好奇心）"><a href="#存有一个好奇心（好奇心）" class="headerlink" title="存有一个好奇心（好奇心）"></a>存有一个好奇心（好奇心）</h2><p>伟大的头脑有一个共同点：那就是他们不断的提问。虽然我们也偶尔提出稀奇古怪的问题，但伟大的头脑和我们不同的是他们提问题的深度。在不断提[好]问题的过程中，我们可以提升自己解决问题的能力。</p>
 <p>下面是几个可行的方法：</p>
 <ul>
@@ -769,7 +787,7 @@
       
         
           
-            <p><img src="https://raw.githubusercontent.com/baoxielin/md-images/master/dmafrica16_heroimage.jpg" alt=""></p>
+            <script src="\assets\js\APlayer.min.js"> </script><p><img src="https://raw.githubusercontent.com/baoxielin/md-images/master/dmafrica16_heroimage.jpg" alt=""></p>
 <h2 id="领域模型"><a href="#领域模型" class="headerlink" title="领域模型"></a>领域模型</h2><p>2004年Eric Evans发表Domain-Driven Design – Tackling Complexity in the Heart of Software （领域驱动设计），简称Evans DDD。领域驱动设计分为两个阶段：</p>
 <ol>
 <li>以一种领域专家、设计人员、开发人员都能理解的“通用语言”作为相互交流的工具，在不断交流的过程中不断发现一些主要的领域概念，然后将这些概念设计成一个领域模型。</li>
