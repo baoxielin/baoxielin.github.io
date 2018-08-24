@@ -54,7 +54,7 @@
 				<h1 class="site-name"><a href="/" title="Michael的博客">Michael的博客</a></h1>
 				<h2 class="blog-motto">落霞与孤鹜起飞，秋水共长天一色。</h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -70,7 +70,7 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
 						<input type="hidden" name="q" value="site:yoursite.com">
 					</form>
 					
@@ -93,14 +93,14 @@
 		<a href="/about" title="Michael" target="_blank" itemprop="author">Michael</a>
 		
   <p class="article-time">
-    <time datetime="2018-02-09T21:24:41.000Z" itemprop="datePublished"> 發表於 2018-02-10</time>
+    <time datetime="2018-02-09T21:24:41.000Z" itemprop="datePublished"> Published 2018-02-10</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目錄</strong>
+			<strong class="toc-title">Contents</strong>
 		
 			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#领域模型"><span class="toc-number">1.</span> <span class="toc-text">领域模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么建立领域模型很重要"><span class="toc-number">2.</span> <span class="toc-text">为什么建立领域模型很重要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#领域通用语言-Ubiquitous-Language"><span class="toc-number">3.</span> <span class="toc-text">领域通用语言(Ubiquitous Language)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将领域模型转换为代码实现"><span class="toc-number">4.</span> <span class="toc-text">将领域模型转换为代码实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#领域建模时思考问题的角度"><span class="toc-number">5.</span> <span class="toc-text">领域建模时思考问题的角度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#领域驱动设计分层架构"><span class="toc-number">6.</span> <span class="toc-text">领域驱动设计分层架构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#领域驱动设计模式"><span class="toc-number">7.</span> <span class="toc-text">领域驱动设计模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#关联的设计"><span class="toc-number">7.1.</span> <span class="toc-text">关联的设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实体（Entity）"><span class="toc-number">7.2.</span> <span class="toc-text">实体（Entity）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#值对象（Value-Object）"><span class="toc-number">7.3.</span> <span class="toc-text">值对象（Value Object）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#领域服务（Domain-Service）"><span class="toc-number">7.4.</span> <span class="toc-text">领域服务（Domain Service）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#聚合及聚合根（Aggregate，Aggregate-Root）"><span class="toc-number">7.5.</span> <span class="toc-text">聚合及聚合根（Aggregate，Aggregate Root）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#工厂（Factory）"><span class="toc-number">7.6.</span> <span class="toc-text">工厂（Factory）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#仓储（Repository）"><span class="toc-number">7.7.</span> <span class="toc-text">仓储（Repository）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计领域模型的一般步骤"><span class="toc-number">8.</span> <span class="toc-text">设计领域模型的一般步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#领域驱动设计的其他一些主题"><span class="toc-number">9.</span> <span class="toc-text">领域驱动设计的其他一些主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一些相关的扩展阅读"><span class="toc-number">10.</span> <span class="toc-text">一些相关的扩展阅读</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CQRS架构"><span class="toc-number">10.1.</span> <span class="toc-text">CQRS架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Event-Sourcing"><span class="toc-number">10.2.</span> <span class="toc-text">Event Sourcing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DCI架构"><span class="toc-number">10.3.</span> <span class="toc-text">DCI架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四色原型分析模式"><span class="toc-number">10.4.</span> <span class="toc-text">四色原型分析模式</span></a></li></ol></li></ol>
 		
@@ -307,24 +307,24 @@
 
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目錄</strong>
+  <strong class="toc-title">Contents</strong>
  
  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#领域模型"><span class="toc-number">1.</span> <span class="toc-text">领域模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么建立领域模型很重要"><span class="toc-number">2.</span> <span class="toc-text">为什么建立领域模型很重要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#领域通用语言-Ubiquitous-Language"><span class="toc-number">3.</span> <span class="toc-text">领域通用语言(Ubiquitous Language)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将领域模型转换为代码实现"><span class="toc-number">4.</span> <span class="toc-text">将领域模型转换为代码实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#领域建模时思考问题的角度"><span class="toc-number">5.</span> <span class="toc-text">领域建模时思考问题的角度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#领域驱动设计分层架构"><span class="toc-number">6.</span> <span class="toc-text">领域驱动设计分层架构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#领域驱动设计模式"><span class="toc-number">7.</span> <span class="toc-text">领域驱动设计模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#关联的设计"><span class="toc-number">7.1.</span> <span class="toc-text">关联的设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实体（Entity）"><span class="toc-number">7.2.</span> <span class="toc-text">实体（Entity）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#值对象（Value-Object）"><span class="toc-number">7.3.</span> <span class="toc-text">值对象（Value Object）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#领域服务（Domain-Service）"><span class="toc-number">7.4.</span> <span class="toc-text">领域服务（Domain Service）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#聚合及聚合根（Aggregate，Aggregate-Root）"><span class="toc-number">7.5.</span> <span class="toc-text">聚合及聚合根（Aggregate，Aggregate Root）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#工厂（Factory）"><span class="toc-number">7.6.</span> <span class="toc-text">工厂（Factory）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#仓储（Repository）"><span class="toc-number">7.7.</span> <span class="toc-text">仓储（Repository）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计领域模型的一般步骤"><span class="toc-number">8.</span> <span class="toc-text">设计领域模型的一般步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#领域驱动设计的其他一些主题"><span class="toc-number">9.</span> <span class="toc-text">领域驱动设计的其他一些主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一些相关的扩展阅读"><span class="toc-number">10.</span> <span class="toc-text">一些相关的扩展阅读</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CQRS架构"><span class="toc-number">10.1.</span> <span class="toc-text">CQRS架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Event-Sourcing"><span class="toc-number">10.2.</span> <span class="toc-text">Event Sourcing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DCI架构"><span class="toc-number">10.3.</span> <span class="toc-text">DCI架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四色原型分析模式"><span class="toc-number">10.4.</span> <span class="toc-text">四色原型分析模式</span></a></li></ol></li></ol>
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 
   
 
   
 <div class="tagslist">
-	<p class="asidetitle">標簽</p>
+	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
 			
@@ -332,11 +332,11 @@
 			
 		
 			
-				<li><a href="/tags/领域驱动设计/" title="领域驱动设计">领域驱动设计<sup>1</sup></a></li>
+				<li><a href="/tags/思维/" title="思维">思维<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/思维/" title="思维">思维<sup>1</sup></a></li>
+				<li><a href="/tags/领域驱动设计/" title="领域驱动设计">领域驱动设计<sup>1</sup></a></li>
 			
 		
 		</ul>
@@ -344,18 +344,84 @@
 
 
   <div class="linkslist">
-  <p class="asidetitle">友情鏈接</p>
+  <p class="asidetitle">Links</p>
     <ul>
         
           <li>
             
-            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
+            	<a href="https://github.com/baoxielin/" target="_blank" title="我的GitHub主页">Github</a>
             
           </li>
         
           <li>
             
-            	<a href="http://wuchong.me" target="_blank" title="Jark&#39;s Blog">Jark&#39;s Blog</a>
+            	<a href="https://toutiao.io/" target="_blank" title="程序员首选阅读分享平台">开发者头条</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://blog.jobbole.com/" target="_blank" title="专注于分享IT互联网相关的文章">伯乐在线</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://juejin.im/" target="_blank" title="高质量的技术社区">稀土掘金</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.android-studio.org/" target="_blank" title="AndroidStudio中文社区">AndroidStudio中文社区</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.oschina.net/" target="_blank" title="开源中国社区">开源中国社区</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://martinfowler.com/" target="_blank" title="MartinFlower">MartinFlower</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://coolshell.cn/" target="_blank" title="酷壳">酷壳</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.luanxiang.org/" target="_blank" title="乱象，印迹">乱象，印迹</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://blog.csdn.net/guolin_blog/" target="_blank" title="郭霖专栏">郭霖专栏</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://blog.csdn.net/xlgen157387" target="_blank" title="徐刘根的博客">徐刘根的博客</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.liaoxuefeng.com/" target="_blank" title="廖雪峰的官方网站">廖雪峰的官方网站</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.buzzfeed.com/" target="_blank" title="BuzzFeeD">BuzzFeeD</a>
             
           </li>
         
@@ -377,13 +443,14 @@
 	
 	
 	<section class="info">
-		<p> Hello ,I&#39;m Larry Page in Google. <br/>
-			This is my blog,believe it or not.</p>
+		<p> 交流促进思考，沟通产生价值 <br/>
+			落霞与孤鹜起飞，秋水共长天一色</p>
 	</section>
 	 
 	<div class="social-font" class="clearfix">
 		
-		<a href="http://weibo.com/2176287895" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		<a href="https://github.com/https://github.com/baoxielin/" target="_blank" class="icon-github" title="github"></a>
 		
 		
 		
@@ -393,6 +460,7 @@
 		
 		
 		
+		<a href="mailto:baoxielin@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
 		
 	</div>
 			
@@ -589,7 +657,7 @@ var _hmt = _hmt || [];
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 

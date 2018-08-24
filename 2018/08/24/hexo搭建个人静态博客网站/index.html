@@ -1,0 +1,556 @@
+
+ <!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Michael的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Michael">
+    
+
+    
+    <meta name="description" content="Hexo����˾�̬������վ���û��� ���ذ�װGit  ��Git��վ�����Լ����Բ���ϵͳ���ض�Ӧ�İ�װ����������ɺ�����װ������װ��������ʾ���а�װ��  ���ذ�װNodeJS  ��NodeJS��վ���ض�Ӧ����ϵͳ�汾�İ�װ����������װ����ʾ���а�װ��  ��װhexo  ����np">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Michael的博客">
+<meta property="og:url" content="http://yoursite.com/2018/08/24/hexo搭建个人静态博客网站/index.html">
+<meta property="og:site_name" content="Michael的博客">
+<meta property="og:description" content="Hexo����˾�̬������վ���û��� ���ذ�װGit  ��Git��վ�����Լ����Բ���ϵͳ���ض�Ӧ�İ�װ����������ɺ�����װ������װ��������ʾ���а�װ��  ���ذ�װNodeJS  ��NodeJS��վ���ض�Ӧ����ϵͳ�汾�İ�װ����������װ����ʾ���а�װ��  ��װhexo  ����np">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-08-24T01:32:52.262Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Michael的博客">
+<meta name="twitter:description" content="Hexo����˾�̬������վ���û��� ���ذ�װGit  ��Git��վ�����Լ����Բ���ϵͳ���ض�Ӧ�İ�װ����������ɺ�����װ������װ��������ʾ���а�װ��  ���ذ�װNodeJS  ��NodeJS��վ���ض�Ӧ����ϵͳ�汾�İ�װ����������װ����ʾ���а�װ��  ��װhexo  ����np">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Michael的博客" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Michael的博客" title="Michael的博客"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Michael的博客">Michael的博客</a></h1>
+				<h2 class="blog-motto">落霞与孤鹜起飞，秋水共长天一色。</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2018/08/24/hexo搭建个人静态博客网站/" title="" itemprop="url"></a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Michael" target="_blank" itemprop="author">Michael</a>
+		
+  <p class="article-time">
+    <time datetime="2018-08-24T01:32:17.668Z" itemprop="datePublished"> 发表于 2018-08-24</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Hexo����˾�̬������վ"><span class="toc-number">1.</span> <span class="toc-text">Hexo����˾�̬������վ</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#���u���"><span class="toc-number">1.1.</span> <span class="toc-text">���û���</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#����hexo"><span class="toc-number">1.2.</span> <span class="toc-text">����hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#���кͷ���"><span class="toc-number">1.3.</span> <span class="toc-text">���кͷ���</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#���𵽹���"><span class="toc-number">1.4.</span> <span class="toc-text">���𵽹���</span></a></li></ol></li></ol>
+		
+		</div>
+		
+		<script src="\assets\js\APlayer.min.js"> </script><h1 id="Hexo����˾�̬������վ"><a href="#Hexo����˾�̬������վ" class="headerlink" title="Hexo����˾�̬������վ"></a>Hexo����˾�̬������վ</h1><h2 id="���u���"><a href="#���u���" class="headerlink" title="���û���"></a>���û���</h2><ol>
+<li>���ذ�װGit</li>
+</ol>
+<p>��<a href="https://gitforwindows.org/" target="_blank" rel="noopener">Git��վ</a>�����Լ����Բ���ϵͳ���ض�Ӧ�İ�װ����������ɺ�����װ������װ��������ʾ���а�װ��</p>
+<ol>
+<li>���ذ�װNodeJS</li>
+</ol>
+<p>��<a href="https://nodejs.org/en/" target="_blank" rel="noopener">NodeJS��վ</a>���ض�Ӧ����ϵͳ�汾�İ�װ����������װ����ʾ���а�װ��</p>
+<ol>
+<li>��װhexo</li>
+</ol>
+<p>����npm����ɰ�װhexo��������λ�õ������Ҽ���ѡ��Git Bash�����ڵ����������д��������������</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo</span><br></pre></td></tr></table></figure>
+<ol>
+<li>��ʼ��hexo</li>
+</ol>
+<p>�ڱ��ش���һ���յ��ļ���Ŀ¼����Ŀ¼�������ڴ���������վ�������ϵĵط��������Ŀ¼���Ҽ����С�Git Bash�������������</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br></pre></td></tr></table></figure>
+<p>��ʼ���ɹ������ڸ�Ŀ¼������һЩ��ص��ļ���Ŀ¼�����°������¼���Ŀ¼���ļ���</p>
+<ul>
+<li>node_modules</li>
+<li>scaffolds</li>
+<li>source</li>
+<li>themes</li>
+<li>_config.yml</li>
+</ul>
+<p>�ص�ֻ��Ҫ��עsourceĿ¼��_config.xml�����ļ���sourceĿ¼�µ�_postsĿ¼�������Ҫ�����Ĳ������£�_config.xml����������Ĳ��Ϳռ䡣</p>
+<h2 id="����hexo"><a href="#����hexo" class="headerlink" title="����hexo"></a>����hexo</h2><ol>
+<li>��������</li>
+</ol>
+<p>��_config.xml�����ļ����޸������ļ�����������Ĳ������ơ����⡢������������ݣ��������£�</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Hexo Configuration</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/configuration.html</span></span><br><span class="line"><span class="comment">## Source: https://github.com/hexojs/hexo/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Site</span></span><br><span class="line">title: Michael�Ĳ���</span><br><span class="line">subtitle: ��ϼ�������ɣ���ˮ������һɫ��</span><br><span class="line">description: ���¼�ʱ�У��Ѿ������졣��֪���Ϲ��ڣ���Ϧ�Ǻ��ꡣ�����˷��ȥ���ֿ���¥����ߴ���ʤ��������Ū��Ӱ���������˼䣿ת��󣬵�粻��������ߡ���Ӧ�кޣ����³����ʱԲ�����б�����ϣ���������Բȱ�����¹���ȫ����Ը�˳��ã�ǧ�ﹲ濾ꡣ</span><br><span class="line">author: Michael</span><br><span class="line">language: en</span><br><span class="line">timezone: UTC</span><br><span class="line"></span><br><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span></span><br><span class="line">url: http:<span class="regexp">//</span>yoursite.com</span><br><span class="line">root: /</span><br><span class="line">permalink: :year<span class="regexp">/:month/</span>:day<span class="regexp">/:title/</span></span><br><span class="line">permalink_defaults:</span><br><span class="line"></span><br><span class="line"><span class="comment"># Directory</span></span><br><span class="line">source_dir: source</span><br><span class="line">public_dir: public</span><br><span class="line">tag_dir: tags</span><br><span class="line">archive_dir: archives</span><br><span class="line">category_dir: categories</span><br><span class="line">code_dir: downloads/code</span><br><span class="line">i18n_dir: :lang</span><br><span class="line">skip_render:</span><br><span class="line"></span><br><span class="line"><span class="comment"># Writing</span></span><br><span class="line">new_post_name: :title.md <span class="comment"># File name of new posts</span></span><br><span class="line">default_layout: post</span><br><span class="line">titlecase: <span class="literal">false</span> <span class="comment"># Transform title into titlecase</span></span><br><span class="line">external_link: <span class="literal">true</span> <span class="comment"># Open external links in new tab</span></span><br><span class="line">filename_case: <span class="number">0</span></span><br><span class="line">render_drafts: <span class="literal">false</span></span><br><span class="line">post_asset_folder: <span class="literal">false</span></span><br><span class="line">relative_link: <span class="literal">false</span></span><br><span class="line">future: <span class="literal">true</span></span><br><span class="line">highlight:</span><br><span class="line">  enable: <span class="literal">true</span></span><br><span class="line">  line_number: <span class="literal">true</span></span><br><span class="line">  auto_detect: <span class="literal">false</span></span><br><span class="line">  tab_replace:</span><br><span class="line">  </span><br><span class="line"><span class="comment"># Home page setting</span></span><br><span class="line"><span class="comment"># path: Root path for your blogs index page. (default = '')</span></span><br><span class="line"><span class="comment"># per_page: Posts displayed per page. (0 = disable pagination)</span></span><br><span class="line"><span class="comment"># order_by: Posts order. (Order by date descending by default)</span></span><br><span class="line">index_generator:</span><br><span class="line">  path: <span class="string">''</span></span><br><span class="line">  per_page: <span class="number">10</span></span><br><span class="line">  order_by: -date</span><br><span class="line">  </span><br><span class="line"><span class="comment"># Category &amp; Tag</span></span><br><span class="line">default_category: uncategorized</span><br><span class="line">category_map:</span><br><span class="line">tag_map:</span><br><span class="line"></span><br><span class="line"><span class="comment"># Date / Time format</span></span><br><span class="line"><span class="comment">## Hexo uses Moment.js to parse and display date</span></span><br><span class="line"><span class="comment">## You can customize the date format as defined in</span></span><br><span class="line"><span class="comment">## http://momentjs.com/docs/#/displaying/format/</span></span><br><span class="line">date_format: YYYY-MM-DD</span><br><span class="line">time_format: HH:mm:ss</span><br><span class="line"></span><br><span class="line"><span class="comment"># Pagination</span></span><br><span class="line"><span class="comment">## Set per_page to 0 to disable pagination</span></span><br><span class="line">per_page: <span class="number">10</span></span><br><span class="line">pagination_dir: page</span><br><span class="line"></span><br><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line">theme: next</span><br><span class="line"></span><br><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:baoxielin/baoxielin.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<ol>
+<li>�޸�����</li>
+</ol>
+<p>hexo�����кܶ಩���������ѡ�񣬿���<a href="https://hexo.io/themes/" target="_blank" rel="noopener">�Ӵ˴���������hexo����</a>��ѡ���Լ�ϲ����������ʽ�������������git��ַ���ڲ���Ŀ¼�´򿪡�Git Bash������ڣ�ִ���������</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone https://github.com/iissnan/hexo-theme-nextthemes/next</span><br></pre></td></tr></table></figure>
+<p>ִ�гɹ�����themesĿ¼������һ���������������ļ��У�������next��</p>
+<h2 id="���кͷ���"><a href="#���кͷ���" class="headerlink" title="���кͷ���"></a>���кͷ���</h2><ol>
+<li>�����������</li>
+</ol>
+<p>�ڡ�Git Bash�������д��������������</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate  # �ɼ�дΪhexo g</span><br><span class="line">$ hexo start          # �ɼ�дΪhexo s</span><br></pre></td></tr></table></figure>
+<p>���������������ʾ������ɹ�������������룺localhost:4000���Ϳ��Է��ʸմ����ĸ�����վ�ˡ�</p>
+<ol>
+<li>��������</li>
+</ol>
+<p>�ڡ�Git Bash�������д������������������һƪ�µĲ��ͷ������£�</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new �ҵĵ�һƪ����</span><br></pre></td></tr></table></figure>
+<p>����ִ�гɹ�����source/_postsĿ¼������һ�����´������������������ļ����˴��ǡ��ҵĵ�һƪ����.md�����ļ��ĺ�׺��Ϊ*.md����markdown�ĵ���������Ҫ�������������ݲ����档</p>
+<p>��Git Bash�������д�������������������Ĳ��ķ�������վ�ϣ�</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo c</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+<p>����������룺localhost:4000���Ϳ��Կ����¸��µ���һƪ���������ˡ�</p>
+<h2 id="���𵽹���"><a href="#���𵽹���" class="headerlink" title="���𵽹���"></a>���𵽹���</h2><p>��ĿǰΪֹ�����Ǵ����Ĳ�����վ��ֻ���ڱ������ʣ������˻��޷���������մ����Ĳ�����վ��</p>
+<p>�μ���վ��(ʹ��hexo+github���Ѹ��˲�����ϸ�̳�)[<a href="http://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html" target="_blank" rel="noopener">http://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html</a>]</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2018/08/24/hexo搭建个人静态博客网站/" data-title="Michael的博客" data-tsina="" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2018/08/24/RxJava入门介绍/" title="">
+  <strong>上一篇：</strong><br/>
+  <span>
+  (no title)</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2018/08/24/Git入门介绍/"  title="">
+ <strong>下一篇：</strong><br/> 
+ <span>(no title)
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Hexo����˾�̬������վ"><span class="toc-number">1.</span> <span class="toc-text">Hexo����˾�̬������վ</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#���u���"><span class="toc-number">1.1.</span> <span class="toc-text">���û���</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#����hexo"><span class="toc-number">1.2.</span> <span class="toc-text">����hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#���кͷ���"><span class="toc-number">1.3.</span> <span class="toc-text">���кͷ���</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#���𵽹���"><span class="toc-number">1.4.</span> <span class="toc-text">���𵽹���</span></a></li></ol></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+  
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://github.com/baoxielin/" target="_blank" title="我的GitHub主页">Github</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://toutiao.io/" target="_blank" title="程序员首选阅读分享平台">开发者头条</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://blog.jobbole.com/" target="_blank" title="专注于分享IT互联网相关的文章">伯乐在线</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://juejin.im/" target="_blank" title="高质量的技术社区">稀土掘金</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.android-studio.org/" target="_blank" title="AndroidStudio中文社区">AndroidStudio中文社区</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.oschina.net/" target="_blank" title="开源中国社区">开源中国社区</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://martinfowler.com/" target="_blank" title="MartinFlower">MartinFlower</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://coolshell.cn/" target="_blank" title="酷壳">酷壳</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.luanxiang.org/" target="_blank" title="乱象，印迹">乱象，印迹</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://blog.csdn.net/guolin_blog/" target="_blank" title="郭霖专栏">郭霖专栏</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://blog.csdn.net/xlgen157387" target="_blank" title="徐刘根的博客">徐刘根的博客</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.liaoxuefeng.com/" target="_blank" title="廖雪峰的官方网站">廖雪峰的官方网站</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.buzzfeed.com/" target="_blank" title="BuzzFeeD">BuzzFeeD</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> 交流促进思考，沟通产生价值 <br/>
+			落霞与孤鹜起飞，秋水共长天一色</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		<a href="https://github.com/https://github.com/baoxielin/" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<a href="mailto:baoxielin@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2018 
+		
+		<a href="/about" target="_blank" title="Michael">Michael</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
