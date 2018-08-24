@@ -1,0 +1,532 @@
+
+ <!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>API���ԭ�� | Michael的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Michael">
+    
+
+    
+    <meta name="description" content="һ�¡��������պ�ǿ���API��Qt���������ŵ�֮һ�������ܽ������������Qt���API�Ĺ����������۵ľ��ϣ�know-how�������������ͨ��׼�򣻶����������ƫ����Լ������ѭ��ЩԼ����Ҫ��Ϊ�������е�API����һ�¡� ��Ȼ��Щ׼����Ҫ���ڶ����API��public">
+<meta name="keywords" content="������">
+<meta property="og:type" content="article">
+<meta property="og:title" content="API���ԭ��">
+<meta property="og:url" content="http://yoursite.com/2018/02/10/API设计原则/index.html">
+<meta property="og:site_name" content="Michael的博客">
+<meta property="og:description" content="һ�¡��������պ�ǿ���API��Qt���������ŵ�֮һ�������ܽ������������Qt���API�Ĺ����������۵ľ��ϣ�know-how�������������ͨ��׼�򣻶����������ƫ����Լ������ѭ��ЩԼ����Ҫ��Ϊ�������е�API����һ�¡� ��Ȼ��Щ׼����Ҫ���ڶ����API��public">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-08-24T01:41:31.169Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="API���ԭ��">
+<meta name="twitter:description" content="һ�¡��������պ�ǿ���API��Qt���������ŵ�֮һ�������ܽ������������Qt���API�Ĺ����������۵ľ��ϣ�know-how�������������ͨ��׼�򣻶����������ƫ����Լ������ѭ��ЩԼ����Ҫ��Ϊ�������е�API����һ�¡� ��Ȼ��Щ׼����Ҫ���ڶ����API��public">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Michael的博客" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Michael的博客" title="Michael的博客"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Michael的博客">Michael的博客</a></h1>
+				<h2 class="blog-motto">落霞与孤鹜起飞，秋水共长天一色。</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2018/02/10/API设计原则/" title="API���ԭ��" itemprop="url">API���ԭ��</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Michael" target="_blank" itemprop="author">Michael</a>
+		
+  <p class="article-time">
+    <time datetime="2018-02-10T00:00:00.000Z" itemprop="datePublished"> 发表于 2018-02-10</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#��API��6������"><span class="toc-number">1.</span> <span class="toc-text">��API��6������</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#����Minimal��"><span class="toc-number">1.1.</span> <span class="toc-text">����Minimal��</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#�걸��Complete��"><span class="toc-number">1.2.</span> <span class="toc-text">�걸��Complete��</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#���������򵥣�Have-clear-and-simple-semantics��"><span class="toc-number">1.3.</span> <span class="toc-text">���������򵥣�Have clear and simple semantics��</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#����ֱ����Be-intuitive��"><span class="toc-number">1.4.</span> <span class="toc-text">����ֱ����Be intuitive��</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#���ڼ��䣨Be-easy-to-memorize��"><span class="toc-number">1.5.</span> <span class="toc-text">���ڼ��䣨Be easy to memorize��</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#����APIʹ����д���ɶ����루Lead-to-readable-code��"><span class="toc-number">1.6.</span> <span class="toc-text">����APIʹ����д���ɶ����루Lead to readable code��</span></a></li></ol></li></ol>
+		
+		</div>
+		
+		<script src="\assets\js\APlayer.min.js"> </script><p>һ�¡��������պ�ǿ���API��Qt���������ŵ�֮һ�������ܽ������������Qt���API�Ĺ����������۵ľ��ϣ�know-how�������������ͨ��׼�򣻶����������ƫ����Լ������ѭ��ЩԼ����Ҫ��Ϊ�������е�API����һ�¡�</p>
+<p>��Ȼ��Щ׼����Ҫ���ڶ����API��public API����������ƶ��ڵ�API��private API��ʱҲ�Ƽ���ѭ��ͬ�ļ��ɣ�techniques������Ϊ������֮��Э�������ǣ�courtesy����</p>
+<h2 id="��API��6������"><a href="#��API��6������" class="headerlink" title="��API��6������"></a>��API��6������</h2><p>API֮�ڳ���Ա����ͬͼ�ν���֮����ͨ�û���end-user����API�еġ�P��ʵ����ָ���ǡ�����Ա����Programmer���������ǡ����򡻣�Program����ǿ������API�Ǹ�����Աʹ�õ���һ��ʵ��</p>
+<p>�ڵ�13��Qt������Matthias �Ĺ���API��Ƶ�����������˹۵㣺APIӦ�ü���minimal�����걸��complete�������������򵥣�have clear and simple semantics��������ֱ����be intuitive�������ڼ��䣨be easy to memorize��������APIʹ����д���ɶ����루lead to readable code����</p>
+<h3 id="����Minimal��"><a href="#����Minimal��" class="headerlink" title="����Minimal��"></a>����Minimal��</h3><p>�����API��ָÿ��class��public��Ա�������٣�public��classҲ�������١�������API������⡢���䡢���Ժͱ����</p>
+<h3 id="�걸��Complete��"><a href="#�걸��Complete��" class="headerlink" title="�걸��Complete��"></a>�걸��Complete��</h3><p>�걸��API��ָ�����еĹ��ܶ������ˡ�����ͱ���API������Щ��ͻ�����һ����Ա�������ڴ�������У���ô���������Ǳ���û��ͻ��Ҳ�������Ҳ��Υ���걸�Եġ�</p>
+<h3 id="���������򵥣�Have-clear-and-simple-semantics��"><a href="#���������򵥣�Have-clear-and-simple-semantics��" class="headerlink" title="���������򵥣�Have clear and simple semantics��"></a>���������򵥣�Have clear and simple semantics��</h3><p>�������������һ��������Ӧ��������������ԭ��the principle of least surprise�����õ�APIӦ�ÿ����ó���������ɵĸ��򵥣����п�����ɲ��������µĿ����ԣ�����ȴ�����ע����Щ���������¡�������Ǿ������⣻��û������ʱ��Ҫ����ͨ�û����������</p>
+<h3 id="����ֱ����Be-intuitive��"><a href="#����ֱ����Be-intuitive��" class="headerlink" title="����ֱ����Be intuitive��"></a>����ֱ����Be intuitive��</h3><p>�������������������һ����APIӦ�÷���ֱ��������ʲô�Ƿ���ֱ����ʲô�����ϣ���ͬ����ͱ������˻��в�ͬ�Ŀ�����API����ֱ���Ĳ��Է��������鲻�ܷḻ���û������Ķ�API�ĵ����ܸ㶮API�����ҳ���Ա�����˽�API���ܿ�����ʹ��API�Ĵ��롣</p>
+<h3 id="���ڼ��䣨Be-easy-to-memorize��"><a href="#���ڼ��䣨Be-easy-to-memorize��" class="headerlink" title="���ڼ��䣨Be easy to memorize��"></a>���ڼ��䣨Be easy to memorize��</h3><p>ΪʹAPI���ڼ��䣬API������Լ��Ӧ�þ���һ���Ժ;�ȷ�ԡ�ʹ������ʶ���ģʽ�͸�����ұ�������д��</p>
+<h3 id="����APIʹ����д���ɶ����루Lead-to-readable-code��"><a href="#����APIʹ����д���ɶ����루Lead-to-readable-code��" class="headerlink" title="����APIʹ����д���ɶ����루Lead to readable code��"></a>����APIʹ����д���ɶ����루Lead to readable code��</h3><p>����ֻдһ�Σ�ȴҪ��ε��Ķ������е��Ժ��޸ģ���д���ɶ��ԺõĴ�����ʱ��Ҫ���Ѹ����ʱ�䣬�����ڲ�Ʒ����������������˵�ǽ�ʡ��ʱ��ġ�</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/������/">������</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2018/02/10/API设计原则/" data-title="API���ԭ�� | Michael的博客" data-tsina="" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2018/03/10/Git入门介绍/" title="Git���Ž���">
+  <strong>上一篇：</strong><br/>
+  <span>
+  Git���Ž���</span>
+</a>
+</div>
+
+
+</nav>
+
+	
+
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#��API��6������"><span class="toc-number">1.</span> <span class="toc-text">��API��6������</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#����Minimal��"><span class="toc-number">1.1.</span> <span class="toc-text">����Minimal��</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#�걸��Complete��"><span class="toc-number">1.2.</span> <span class="toc-text">�걸��Complete��</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#���������򵥣�Have-clear-and-simple-semantics��"><span class="toc-number">1.3.</span> <span class="toc-text">���������򵥣�Have clear and simple semantics��</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#����ֱ����Be-intuitive��"><span class="toc-number">1.4.</span> <span class="toc-text">����ֱ����Be intuitive��</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#���ڼ��䣨Be-easy-to-memorize��"><span class="toc-number">1.5.</span> <span class="toc-text">���ڼ��䣨Be easy to memorize��</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#����APIʹ����д���ɶ����루Lead-to-readable-code��"><span class="toc-number">1.6.</span> <span class="toc-text">����APIʹ����д���ɶ����루Lead to readable code��</span></a></li></ol></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/������/" title="������">������<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/��������/" title="��������">��������<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/��վ/" title="��վ">��վ<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/�������/" title="�������">�������<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://github.com/baoxielin/" target="_blank" title="我的GitHub主页">Github</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://toutiao.io/" target="_blank" title="程序员首选阅读分享平台">开发者头条</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://blog.jobbole.com/" target="_blank" title="专注于分享IT互联网相关的文章">伯乐在线</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://juejin.im/" target="_blank" title="高质量的技术社区">稀土掘金</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.android-studio.org/" target="_blank" title="AndroidStudio中文社区">AndroidStudio中文社区</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.oschina.net/" target="_blank" title="开源中国社区">开源中国社区</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://martinfowler.com/" target="_blank" title="MartinFlower">MartinFlower</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://coolshell.cn/" target="_blank" title="酷壳">酷壳</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.luanxiang.org/" target="_blank" title="乱象，印迹">乱象，印迹</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://blog.csdn.net/guolin_blog/" target="_blank" title="郭霖专栏">郭霖专栏</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://blog.csdn.net/xlgen157387" target="_blank" title="徐刘根的博客">徐刘根的博客</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.liaoxuefeng.com/" target="_blank" title="廖雪峰的官方网站">廖雪峰的官方网站</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.buzzfeed.com/" target="_blank" title="BuzzFeeD">BuzzFeeD</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> 交流促进思考，沟通产生价值 <br/>
+			落霞与孤鹜起飞，秋水共长天一色</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		<a href="https://github.com/https://github.com/baoxielin/" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<a href="mailto:baoxielin@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2018 
+		
+		<a href="/about" target="_blank" title="Michael">Michael</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>

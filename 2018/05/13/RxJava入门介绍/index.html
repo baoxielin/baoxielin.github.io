@@ -4,29 +4,30 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Michael的博客</title>
+    <title>RxJava入门介绍 | Michael的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Michael">
     
 
     
-    <meta name="description" content="RxJava入门介绍简介什么是RxJava？一个词：异步。  RxJava 在 GitHub 主页上的自我介绍是”A library for composing asynchronous and event-based programs using observable sequences for the Java VM”(一个在 Java VM 上使用可观测的序列来组成异步的、基于事件的程序的">
+    <meta name="description" content="简介什么是RxJava？一个词：异步。  RxJava 在 GitHub 主页上的自我介绍是”A library for composing asynchronous and event-based programs using observable sequences for the Java VM”(一个在 Java VM 上使用可观测的序列来组成异步的、基于事件的程序的库)，这就是 RxJ">
+<meta name="keywords" content="软件开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Michael的博客">
-<meta property="og:url" content="http://yoursite.com/2018/08/24/RxJava入门介绍/index.html">
+<meta property="og:title" content="RxJava入门介绍">
+<meta property="og:url" content="http://yoursite.com/2018/05/13/RxJava入门介绍/index.html">
 <meta property="og:site_name" content="Michael的博客">
-<meta property="og:description" content="RxJava入门介绍简介什么是RxJava？一个词：异步。  RxJava 在 GitHub 主页上的自我介绍是”A library for composing asynchronous and event-based programs using observable sequences for the Java VM”(一个在 Java VM 上使用可观测的序列来组成异步的、基于事件的程序的">
+<meta property="og:description" content="简介什么是RxJava？一个词：异步。  RxJava 在 GitHub 主页上的自我介绍是”A library for composing asynchronous and event-based programs using observable sequences for the Java VM”(一个在 Java VM 上使用可观测的序列来组成异步的、基于事件的程序的库)，这就是 RxJ">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="e:/资料库/工作资料/随笔记录/杂货铺/observer-pattern.jpg">
 <meta property="og:image" content="e:/资料库/工作资料/随笔记录/杂货铺/RxJava-observer-pattern.jpg">
 <meta property="og:image" content="e:/资料库/工作资料/随笔记录/杂货铺/subscribe-on.jpg">
 <meta property="og:image" content="e:/资料库/工作资料/随笔记录/杂货铺/observe-on.jpg">
 <meta property="og:image" content="e:/资料库/工作资料/随笔记录/杂货铺/complex-scheduler.jpg">
-<meta property="og:updated_time" content="2018-08-24T01:39:15.437Z">
+<meta property="og:updated_time" content="2018-08-24T01:51:18.563Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Michael的博客">
-<meta name="twitter:description" content="RxJava入门介绍简介什么是RxJava？一个词：异步。  RxJava 在 GitHub 主页上的自我介绍是”A library for composing asynchronous and event-based programs using observable sequences for the Java VM”(一个在 Java VM 上使用可观测的序列来组成异步的、基于事件的程序的">
+<meta name="twitter:title" content="RxJava入门介绍">
+<meta name="twitter:description" content="简介什么是RxJava？一个词：异步。  RxJava 在 GitHub 主页上的自我介绍是”A library for composing asynchronous and event-based programs using observable sequences for the Java VM”(一个在 Java VM 上使用可观测的序列来组成异步的、基于事件的程序的库)，这就是 RxJ">
 <meta name="twitter:image" content="e:/资料库/工作资料/随笔记录/杂货铺/observer-pattern.jpg">
 
     
@@ -87,14 +88,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2018/08/24/RxJava入门介绍/" title="" itemprop="url"></a>
+      <a href="/2018/05/13/RxJava入门介绍/" title="RxJava入门介绍" itemprop="url">RxJava入门介绍</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Michael" target="_blank" itemprop="author">Michael</a>
 		
   <p class="article-time">
-    <time datetime="2018-08-24T01:32:17.674Z" itemprop="datePublished"> Published 2018-08-24</time>
+    <time datetime="2018-05-13T00:00:00.000Z" itemprop="datePublished"> Published 2018-05-13</time>
     
   </p>
 </header>
@@ -103,11 +104,11 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#RxJava入门介绍"><span class="toc-number">1.</span> <span class="toc-text">RxJava入门介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-number">1.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#API-介绍和原理简析"><span class="toc-number">1.2.</span> <span class="toc-text">API 介绍和原理简析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-概念：扩展的观察者模式"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.  概念：扩展的观察者模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-基本实现"><span class="toc-number">1.2.2.</span> <span class="toc-text">2. 基本实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-创建-Observer"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">2.1 创建 Observer</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-创建-Observable"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">2.2 创建 Observable</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-Subscribe-订阅"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">2.3 Subscribe (订阅)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-使用示例"><span class="toc-number">1.2.2.4.</span> <span class="toc-text">2.4 使用示例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-线程控制-Scheduler"><span class="toc-number">1.2.3.</span> <span class="toc-text">3. 线程控制(Scheduler)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-Scheduler-的-API"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">3.1 Scheduler 的 API</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-Scheduler的原理"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">3.2 Scheduler的原理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-变换"><span class="toc-number">1.2.4.</span> <span class="toc-text">4.变换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-API"><span class="toc-number">1.2.4.1.</span> <span class="toc-text">4.1 API</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-变换的原理-lift"><span class="toc-number">1.2.4.2.</span> <span class="toc-text">4.2 变换的原理(lift)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-compose-对-Observable-整体的变换"><span class="toc-number">1.2.4.3.</span> <span class="toc-text">4.3 compose: 对 Observable 整体的变换</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-线程控制：Scheduler"><span class="toc-number">1.2.5.</span> <span class="toc-text">5. 线程控制：Scheduler</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-Scheduler的API"><span class="toc-number">1.2.5.1.</span> <span class="toc-text">5.1 Scheduler的API</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-Scheduler的原理"><span class="toc-number">1.2.5.2.</span> <span class="toc-text">5.2 Scheduler的原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-延伸：doOnSubscribe"><span class="toc-number">1.2.5.3.</span> <span class="toc-text">5.3 延伸：doOnSubscribe()</span></a></li></ol></li></ol></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#API-介绍和原理简析"><span class="toc-number">2.</span> <span class="toc-text">API 介绍和原理简析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-概念：扩展的观察者模式"><span class="toc-number">2.1.</span> <span class="toc-text">1.  概念：扩展的观察者模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-基本实现"><span class="toc-number">2.2.</span> <span class="toc-text">2. 基本实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-创建-Observer"><span class="toc-number">2.2.1.</span> <span class="toc-text">2.1 创建 Observer</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-创建-Observable"><span class="toc-number">2.2.2.</span> <span class="toc-text">2.2 创建 Observable</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-Subscribe-订阅"><span class="toc-number">2.2.3.</span> <span class="toc-text">2.3 Subscribe (订阅)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-使用示例"><span class="toc-number">2.2.4.</span> <span class="toc-text">2.4 使用示例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-线程控制-Scheduler"><span class="toc-number">2.3.</span> <span class="toc-text">3. 线程控制(Scheduler)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-Scheduler-的-API"><span class="toc-number">2.3.1.</span> <span class="toc-text">3.1 Scheduler 的 API</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-Scheduler的原理"><span class="toc-number">2.3.2.</span> <span class="toc-text">3.2 Scheduler的原理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-变换"><span class="toc-number">2.4.</span> <span class="toc-text">4.变换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-API"><span class="toc-number">2.4.1.</span> <span class="toc-text">4.1 API</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-变换的原理-lift"><span class="toc-number">2.4.2.</span> <span class="toc-text">4.2 变换的原理(lift)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-compose-对-Observable-整体的变换"><span class="toc-number">2.4.3.</span> <span class="toc-text">4.3 compose: 对 Observable 整体的变换</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-线程控制：Scheduler"><span class="toc-number">2.5.</span> <span class="toc-text">5. 线程控制：Scheduler</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-Scheduler的API"><span class="toc-number">2.5.1.</span> <span class="toc-text">5.1 Scheduler的API</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-Scheduler的原理"><span class="toc-number">2.5.2.</span> <span class="toc-text">5.2 Scheduler的原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-延伸：doOnSubscribe"><span class="toc-number">2.5.3.</span> <span class="toc-text">5.3 延伸：doOnSubscribe()</span></a></li></ol></li></ol></li></ol>
 		
 		</div>
 		
-		<script src="\assets\js\APlayer.min.js"> </script><h1 id="RxJava入门介绍"><a href="#RxJava入门介绍" class="headerlink" title="RxJava入门介绍"></a>RxJava入门介绍</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>什么是RxJava？一个词：异步。</p>
+		<script src="\assets\js\APlayer.min.js"> </script><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>什么是RxJava？一个词：异步。</p>
 <blockquote>
 <p>RxJava 在 GitHub 主页上的自我介绍是”A library for composing asynchronous and event-based programs using observable sequences for the Java VM”(一个在 Java VM 上使用可观测的序列来组成异步的、基于事件的程序的库)，这就是 RxJava。</p>
 </blockquote>
@@ -261,13 +262,18 @@
 <div class="article-catetags">
 
 
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/软件开发/">软件开发</a>
+  </div>
+
 </div>
 
 
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2018/08/24/RxJava入门介绍/" data-title="Michael的博客" data-tsina="" class="share clearfix">
+	  <div data-url="http://yoursite.com/2018/05/13/RxJava入门介绍/" data-title="RxJava入门介绍 | Michael的博客" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -280,19 +286,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2018/08/24/软件开发阅读书目/" title="">
-  <strong>上一篇：</strong><br/>
-  <span>
-  (no title)</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2018/08/24/hexo搭建个人静态博客网站/"  title="">
+<a href="/2018/04/20/软件开发阅读书目/"  title="软件开发阅读书目">
  <strong>下一篇：</strong><br/> 
- <span>(no title)
+ <span>软件开发阅读书目
 </span>
 </a>
 </div>
@@ -309,7 +307,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#RxJava入门介绍"><span class="toc-number">1.</span> <span class="toc-text">RxJava入门介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-number">1.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#API-介绍和原理简析"><span class="toc-number">1.2.</span> <span class="toc-text">API 介绍和原理简析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-概念：扩展的观察者模式"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.  概念：扩展的观察者模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-基本实现"><span class="toc-number">1.2.2.</span> <span class="toc-text">2. 基本实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-创建-Observer"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">2.1 创建 Observer</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-创建-Observable"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">2.2 创建 Observable</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-Subscribe-订阅"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">2.3 Subscribe (订阅)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-使用示例"><span class="toc-number">1.2.2.4.</span> <span class="toc-text">2.4 使用示例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-线程控制-Scheduler"><span class="toc-number">1.2.3.</span> <span class="toc-text">3. 线程控制(Scheduler)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-Scheduler-的-API"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">3.1 Scheduler 的 API</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-Scheduler的原理"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">3.2 Scheduler的原理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-变换"><span class="toc-number">1.2.4.</span> <span class="toc-text">4.变换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-API"><span class="toc-number">1.2.4.1.</span> <span class="toc-text">4.1 API</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-变换的原理-lift"><span class="toc-number">1.2.4.2.</span> <span class="toc-text">4.2 变换的原理(lift)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-compose-对-Observable-整体的变换"><span class="toc-number">1.2.4.3.</span> <span class="toc-text">4.3 compose: 对 Observable 整体的变换</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-线程控制：Scheduler"><span class="toc-number">1.2.5.</span> <span class="toc-text">5. 线程控制：Scheduler</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-Scheduler的API"><span class="toc-number">1.2.5.1.</span> <span class="toc-text">5.1 Scheduler的API</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-Scheduler的原理"><span class="toc-number">1.2.5.2.</span> <span class="toc-text">5.2 Scheduler的原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-延伸：doOnSubscribe"><span class="toc-number">1.2.5.3.</span> <span class="toc-text">5.3 延伸：doOnSubscribe()</span></a></li></ol></li></ol></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#API-介绍和原理简析"><span class="toc-number">2.</span> <span class="toc-text">API 介绍和原理简析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-概念：扩展的观察者模式"><span class="toc-number">2.1.</span> <span class="toc-text">1.  概念：扩展的观察者模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-基本实现"><span class="toc-number">2.2.</span> <span class="toc-text">2. 基本实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-创建-Observer"><span class="toc-number">2.2.1.</span> <span class="toc-text">2.1 创建 Observer</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-创建-Observable"><span class="toc-number">2.2.2.</span> <span class="toc-text">2.2 创建 Observable</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-Subscribe-订阅"><span class="toc-number">2.2.3.</span> <span class="toc-text">2.3 Subscribe (订阅)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-使用示例"><span class="toc-number">2.2.4.</span> <span class="toc-text">2.4 使用示例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-线程控制-Scheduler"><span class="toc-number">2.3.</span> <span class="toc-text">3. 线程控制(Scheduler)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-Scheduler-的-API"><span class="toc-number">2.3.1.</span> <span class="toc-text">3.1 Scheduler 的 API</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-Scheduler的原理"><span class="toc-number">2.3.2.</span> <span class="toc-text">3.2 Scheduler的原理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-变换"><span class="toc-number">2.4.</span> <span class="toc-text">4.变换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-API"><span class="toc-number">2.4.1.</span> <span class="toc-text">4.1 API</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-变换的原理-lift"><span class="toc-number">2.4.2.</span> <span class="toc-text">4.2 变换的原理(lift)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-compose-对-Observable-整体的变换"><span class="toc-number">2.4.3.</span> <span class="toc-text">4.3 compose: 对 Observable 整体的变换</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-线程控制：Scheduler"><span class="toc-number">2.5.</span> <span class="toc-text">5. 线程控制：Scheduler</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-Scheduler的API"><span class="toc-number">2.5.1.</span> <span class="toc-text">5.1 Scheduler的API</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-Scheduler的原理"><span class="toc-number">2.5.2.</span> <span class="toc-text">5.2 Scheduler的原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-延伸：doOnSubscribe"><span class="toc-number">2.5.3.</span> <span class="toc-text">5.3 延伸：doOnSubscribe()</span></a></li></ol></li></ol></li></ol>
  
   </div>
 
@@ -320,6 +318,25 @@
   
 
   
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/软件开发/" title="软件开发">软件开发<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/开发工具/" title="开发工具">开发工具<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/网站/" title="网站">网站<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
 
   <div class="linkslist">
   <p class="asidetitle">Links</p>

@@ -4,24 +4,25 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Michael的博客</title>
+    <title>API设计原则 | Michael的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Michael">
     
 
     
-    <meta name="description" content="API设计原则 一致、易于掌握和强大的API是Qt最著名的优点之一。此文总结了我们在设计Qt风格API的过程中所积累的诀窍（know-how）。其中许多是通用准则；而其他的则更偏向于约定，遵循这些约定主要是为了与已有的API保持一致。 虽然这些准则主要用于对外的API（public API），但在设计对内的API（private API）时也推荐遵循相同的技巧（techniques），作为开发者">
+    <meta name="description" content="一致、易于掌握和强大的API是Qt最著名的优点之一。此文总结了我们在设计Qt风格API的过程中所积累的诀窍（know-how）。其中许多是通用准则；而其他的则更偏向于约定，遵循这些约定主要是为了与已有的API保持一致。 虽然这些准则主要用于对外的API（public API），但在设计对内的API（private API）时也推荐遵循相同的技巧（techniques），作为开发者之间协作的礼仪（">
+<meta name="keywords" content="软件开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Michael的博客">
-<meta property="og:url" content="http://yoursite.com/2018/08/24/API设计原则/index.html">
+<meta property="og:title" content="API设计原则">
+<meta property="og:url" content="http://yoursite.com/2018/03/10/API设计原则/index.html">
 <meta property="og:site_name" content="Michael的博客">
-<meta property="og:description" content="API设计原则 一致、易于掌握和强大的API是Qt最著名的优点之一。此文总结了我们在设计Qt风格API的过程中所积累的诀窍（know-how）。其中许多是通用准则；而其他的则更偏向于约定，遵循这些约定主要是为了与已有的API保持一致。 虽然这些准则主要用于对外的API（public API），但在设计对内的API（private API）时也推荐遵循相同的技巧（techniques），作为开发者">
+<meta property="og:description" content="一致、易于掌握和强大的API是Qt最著名的优点之一。此文总结了我们在设计Qt风格API的过程中所积累的诀窍（know-how）。其中许多是通用准则；而其他的则更偏向于约定，遵循这些约定主要是为了与已有的API保持一致。 虽然这些准则主要用于对外的API（public API），但在设计对内的API（private API）时也推荐遵循相同的技巧（techniques），作为开发者之间协作的礼仪（">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-08-24T01:38:38.880Z">
+<meta property="og:updated_time" content="2018-08-24T01:55:16.469Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Michael的博客">
-<meta name="twitter:description" content="API设计原则 一致、易于掌握和强大的API是Qt最著名的优点之一。此文总结了我们在设计Qt风格API的过程中所积累的诀窍（know-how）。其中许多是通用准则；而其他的则更偏向于约定，遵循这些约定主要是为了与已有的API保持一致。 虽然这些准则主要用于对外的API（public API），但在设计对内的API（private API）时也推荐遵循相同的技巧（techniques），作为开发者">
+<meta name="twitter:title" content="API设计原则">
+<meta name="twitter:description" content="一致、易于掌握和强大的API是Qt最著名的优点之一。此文总结了我们在设计Qt风格API的过程中所积累的诀窍（know-how）。其中许多是通用准则；而其他的则更偏向于约定，遵循这些约定主要是为了与已有的API保持一致。 虽然这些准则主要用于对外的API（public API），但在设计对内的API（private API）时也推荐遵循相同的技巧（techniques），作为开发者之间协作的礼仪（">
 
     
     <link rel="alternative" href="/atom.xml" title="Michael的博客" type="application/atom+xml">
@@ -81,14 +82,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2018/08/24/API设计原则/" title="" itemprop="url"></a>
+      <a href="/2018/03/10/API设计原则/" title="API设计原则" itemprop="url">API设计原则</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Michael" target="_blank" itemprop="author">Michael</a>
 		
   <p class="article-time">
-    <time datetime="2018-08-24T01:32:17.639Z" itemprop="datePublished"> Published 2018-08-24</time>
+    <time datetime="2018-03-10T00:00:00.000Z" itemprop="datePublished"> Published 2018-03-10</time>
     
   </p>
 </header>
@@ -97,12 +98,11 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#API设计原则"><span class="toc-number">1.</span> <span class="toc-text">API设计原则</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#好API的6个特质"><span class="toc-number">1.1.</span> <span class="toc-text">好API的6个特质</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#极简（Minimal）"><span class="toc-number">1.1.1.</span> <span class="toc-text">极简（Minimal）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#完备（Complete）"><span class="toc-number">1.1.2.</span> <span class="toc-text">完备（Complete）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#语义清晰简单（Have-clear-and-simple-semantics）"><span class="toc-number">1.1.3.</span> <span class="toc-text">语义清晰简单（Have clear and simple semantics）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#符合直觉（Be-intuitive）"><span class="toc-number">1.1.4.</span> <span class="toc-text">符合直觉（Be intuitive）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#易于记忆（Be-easy-to-memorize）"><span class="toc-number">1.1.5.</span> <span class="toc-text">易于记忆（Be easy to memorize）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#引导API使用者写出可读代码（Lead-to-readable-code）"><span class="toc-number">1.1.6.</span> <span class="toc-text">引导API使用者写出可读代码（Lead to readable code）</span></a></li></ol></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#好API的6个特质"><span class="toc-number">1.</span> <span class="toc-text">好API的6个特质</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#极简（Minimal）"><span class="toc-number">1.1.</span> <span class="toc-text">极简（Minimal）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#完备（Complete）"><span class="toc-number">1.2.</span> <span class="toc-text">完备（Complete）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#语义清晰简单（Have-clear-and-simple-semantics）"><span class="toc-number">1.3.</span> <span class="toc-text">语义清晰简单（Have clear and simple semantics）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#符合直觉（Be-intuitive）"><span class="toc-number">1.4.</span> <span class="toc-text">符合直觉（Be intuitive）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#易于记忆（Be-easy-to-memorize）"><span class="toc-number">1.5.</span> <span class="toc-text">易于记忆（Be easy to memorize）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#引导API使用者写出可读代码（Lead-to-readable-code）"><span class="toc-number">1.6.</span> <span class="toc-text">引导API使用者写出可读代码（Lead to readable code）</span></a></li></ol></li></ol>
 		
 		</div>
 		
-		<script src="\assets\js\APlayer.min.js"> </script><h1 id="API设计原则"><a href="#API设计原则" class="headerlink" title="API设计原则"></a>API设计原则</h1><hr>
-<p>一致、易于掌握和强大的API是Qt最著名的优点之一。此文总结了我们在设计Qt风格API的过程中所积累的诀窍（know-how）。其中许多是通用准则；而其他的则更偏向于约定，遵循这些约定主要是为了与已有的API保持一致。</p>
+		<script src="\assets\js\APlayer.min.js"> </script><p>一致、易于掌握和强大的API是Qt最著名的优点之一。此文总结了我们在设计Qt风格API的过程中所积累的诀窍（know-how）。其中许多是通用准则；而其他的则更偏向于约定，遵循这些约定主要是为了与已有的API保持一致。</p>
 <p>虽然这些准则主要用于对外的API（public API），但在设计对内的API（private API）时也推荐遵循相同的技巧（techniques），作为开发者之间协作的礼仪（courtesy）。</p>
 <h2 id="好API的6个特质"><a href="#好API的6个特质" class="headerlink" title="好API的6个特质"></a>好API的6个特质</h2><p>API之于程序员就如同图形界面之于普通用户（end-user）。API中的『P』实际上指的是『程序员』（Programmer），而不是『程序』（Program），强调的是API是给程序员使用的这一事实。</p>
 <p>在第13期Qt季刊，Matthias 的关于API设计的文章中提出了观点：API应该极简（minimal）且完备（complete）、语义清晰简单（have clear and simple semantics）、符合直觉（be intuitive）、易于记忆（be easy to memorize）和引导API使用者写出可读代码（lead to readable code）。</p>
@@ -118,13 +118,18 @@
 <div class="article-catetags">
 
 
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/软件开发/">软件开发</a>
+  </div>
+
 </div>
 
 
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2018/08/24/API设计原则/" data-title="Michael的博客" data-tsina="" class="share clearfix">
+	  <div data-url="http://yoursite.com/2018/03/10/API设计原则/" data-title="API设计原则 | Michael的博客" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -138,10 +143,10 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2018/08/24/Git入门介绍/" title="">
+ <a href="/2018/03/15/hexo搭建个人静态博客网站/" title="Hexo搭建个人静态博客网站">
   <strong>上一篇：</strong><br/>
   <span>
-  (no title)</span>
+  Hexo搭建个人静态博客网站</span>
 </a>
 </div>
 
@@ -158,7 +163,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#API设计原则"><span class="toc-number">1.</span> <span class="toc-text">API设计原则</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#好API的6个特质"><span class="toc-number">1.1.</span> <span class="toc-text">好API的6个特质</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#极简（Minimal）"><span class="toc-number">1.1.1.</span> <span class="toc-text">极简（Minimal）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#完备（Complete）"><span class="toc-number">1.1.2.</span> <span class="toc-text">完备（Complete）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#语义清晰简单（Have-clear-and-simple-semantics）"><span class="toc-number">1.1.3.</span> <span class="toc-text">语义清晰简单（Have clear and simple semantics）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#符合直觉（Be-intuitive）"><span class="toc-number">1.1.4.</span> <span class="toc-text">符合直觉（Be intuitive）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#易于记忆（Be-easy-to-memorize）"><span class="toc-number">1.1.5.</span> <span class="toc-text">易于记忆（Be easy to memorize）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#引导API使用者写出可读代码（Lead-to-readable-code）"><span class="toc-number">1.1.6.</span> <span class="toc-text">引导API使用者写出可读代码（Lead to readable code）</span></a></li></ol></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#好API的6个特质"><span class="toc-number">1.</span> <span class="toc-text">好API的6个特质</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#极简（Minimal）"><span class="toc-number">1.1.</span> <span class="toc-text">极简（Minimal）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#完备（Complete）"><span class="toc-number">1.2.</span> <span class="toc-text">完备（Complete）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#语义清晰简单（Have-clear-and-simple-semantics）"><span class="toc-number">1.3.</span> <span class="toc-text">语义清晰简单（Have clear and simple semantics）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#符合直觉（Be-intuitive）"><span class="toc-number">1.4.</span> <span class="toc-text">符合直觉（Be intuitive）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#易于记忆（Be-easy-to-memorize）"><span class="toc-number">1.5.</span> <span class="toc-text">易于记忆（Be easy to memorize）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#引导API使用者写出可读代码（Lead-to-readable-code）"><span class="toc-number">1.6.</span> <span class="toc-text">引导API使用者写出可读代码（Lead to readable code）</span></a></li></ol></li></ol>
  
   </div>
 
@@ -169,6 +174,25 @@
   
 
   
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/软件开发/" title="软件开发">软件开发<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/开发工具/" title="开发工具">开发工具<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/网站/" title="网站">网站<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
 
   <div class="linkslist">
   <p class="asidetitle">Links</p>

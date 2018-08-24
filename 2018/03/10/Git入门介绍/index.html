@@ -1,0 +1,574 @@
+
+ <!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Git���Ž��� | Michael的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Michael">
+    
+
+    
+    <meta name="description" content="Git���ʲô��GitGit��һ����Դ�ķֲ�ʽ�汾����ϵͳ��������Ч�����ٵĴ���Ӻ�С���ǳ������Ŀ�汾����Git��Linus TorvaldsΪ�˰�������Linux�ں˿�����������һ������Դ��İ汾��������� Git��װ��Git�ٷ���վ��Git for Windows����Git��װ���������">
+<meta name="keywords" content="��������">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git���Ž���">
+<meta property="og:url" content="http://yoursite.com/2018/03/10/Git入门介绍/index.html">
+<meta property="og:site_name" content="Michael的博客">
+<meta property="og:description" content="Git���ʲô��GitGit��һ����Դ�ķֲ�ʽ�汾����ϵͳ��������Ч�����ٵĴ���Ӻ�С���ǳ������Ŀ�汾����Git��Linus TorvaldsΪ�˰�������Linux�ں˿�����������һ������Դ��İ汾��������� Git��װ��Git�ٷ���վ��Git for Windows����Git��װ���������">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-08-24T01:42:02.850Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git���Ž���">
+<meta name="twitter:description" content="Git���ʲô��GitGit��һ����Դ�ķֲ�ʽ�汾����ϵͳ��������Ч�����ٵĴ���Ӻ�С���ǳ������Ŀ�汾����Git��Linus TorvaldsΪ�˰�������Linux�ں˿�����������һ������Դ��İ汾��������� Git��װ��Git�ٷ���վ��Git for Windows����Git��װ���������">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Michael的博客" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Michael的博客" title="Michael的博客"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Michael的博客">Michael的博客</a></h1>
+				<h2 class="blog-motto">落霞与孤鹜起飞，秋水共长天一色。</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2018/03/10/Git入门介绍/" title="Git���Ž���" itemprop="url">Git���Ž���</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Michael" target="_blank" itemprop="author">Michael</a>
+		
+  <p class="article-time">
+    <time datetime="2018-03-10T00:00:00.000Z" itemprop="datePublished"> 发表于 2018-03-10</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Git���"><span class="toc-number">1.</span> <span class="toc-text">Git���</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ʲo��Git"><span class="toc-number">1.1.</span> <span class="toc-text">ʲô��Git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git��װ"><span class="toc-number">1.2.</span> <span class="toc-text">Git��װ</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#��������"><span class="toc-number">1.3.</span> <span class="toc-text">��������</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#��֧����"><span class="toc-number">2.</span> <span class="toc-text">��֧����</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git��������"><span class="toc-number">3.</span> <span class="toc-text">Git��������</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#���ʽ���"><span class="toc-number">3.1.</span> <span class="toc-text">���ʽ���</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-�½������"><span class="toc-number">3.1.1.</span> <span class="toc-text">1. �½������</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-����"><span class="toc-number">3.1.2.</span> <span class="toc-text">2. ����</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-����-ɾ���l�"><span class="toc-number">3.1.3.</span> <span class="toc-text">3. ����/ɾ���ļ�</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-�����ύ"><span class="toc-number">3.1.4.</span> <span class="toc-text">4. �����ύ</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-��֧"><span class="toc-number">3.1.5.</span> <span class="toc-text">5. ��֧</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-��k"><span class="toc-number">3.1.6.</span> <span class="toc-text">6. ��ǩ</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-�鿴��Ϣ"><span class="toc-number">3.1.7.</span> <span class="toc-text">7. �鿴��Ϣ</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-Զ��ͬ��"><span class="toc-number">3.1.8.</span> <span class="toc-text">8. Զ��ͬ��</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-����"><span class="toc-number">3.1.9.</span> <span class="toc-text">9. ����</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-����"><span class="toc-number">3.1.10.</span> <span class="toc-text">10. ����</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#����GitHubԶ�ֿ̲�"><span class="toc-number">4.</span> <span class="toc-text">����GitHubԶ�ֿ̲�</span></a></li></ol>
+		
+		</div>
+		
+		<script src="\assets\js\APlayer.min.js"> </script><h2 id="Git���"><a href="#Git���" class="headerlink" title="Git���"></a>Git���</h2><h3 id="ʲo��Git"><a href="#ʲo��Git" class="headerlink" title="ʲô��Git"></a>ʲô��Git</h3><p>Git��һ����Դ�ķֲ�ʽ�汾����ϵͳ��������Ч�����ٵĴ���Ӻ�С���ǳ������Ŀ�汾����Git��Linus TorvaldsΪ�˰�������Linux�ں˿�����������һ������Դ��İ汾���������</p>
+<h3 id="Git��װ"><a href="#Git��װ" class="headerlink" title="Git��װ"></a>Git��װ</h3><p>��<a href="https://git-scm.com/" target="_blank" rel="noopener">Git�ٷ���վ</a>��<a href="https://git-for-windows.github.io/" target="_blank" rel="noopener">Git for Windows</a>����Git��װ����������װ����ʾ��װ���ɡ�</p>
+<p><strong>�鿴������Ϣ</strong></p>
+<p>Ҫ�鿴Git���е�������Ϣ������ʹ�� git config –list���</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git config --list</span><br><span class="line">user.name=baoxl</span><br><span class="line">user.email=baoxl@landicorp.com</span><br></pre></td></tr></table></figure>
+<p><strong>���ø�����Ϣ</strong></p>
+<p>���ø��˵��û����ƺ͵����ʼ���ַ��������git config���</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &quot;baoxl&quot;</span><br><span class="line">$ git config --global user.email &quot;baoxl@landicorp.com&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="��������"><a href="#��������" class="headerlink" title="��������"></a>��������</h3><h2 id="��֧����"><a href="#��֧����" class="headerlink" title="��֧����"></a>��֧����</h2><ul>
+<li>�鿴��֧��git branch</li>
+<li>������֧��git branch <branch-name></branch-name></li>
+<li>�л���ָ����֧��git checkout <branch-name></branch-name></li>
+<li>�������л�����֧��git checkout -b <branch-name></branch-name></li>
+<li>�ϲ�ĳ��֧����ǰ��֧��git merge <branch-name>����<branch-name>��֧�ϲ�����ǰ��֧�У�</branch-name></branch-name></li>
+<li>ɾ��ָ����֧��git branch -d <branch-name></branch-name></li>
+</ul>
+<p>��ѯGit�ύ��־���<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ git log --graph --pretty=oneline --abbrev-commit</span><br><span class="line">*   59bc1cb conflict fixed</span><br><span class="line">|\</span><br><span class="line">| * 75a857c AND simple</span><br><span class="line">* | 400b400 &amp; simple</span><br><span class="line">|/</span><br><span class="line">* fec145a branch test</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<h2 id="Git��������"><a href="#Git��������" class="headerlink" title="Git��������"></a>Git��������</h2><h3 id="���ʽ���"><a href="#���ʽ���" class="headerlink" title="���ʽ���"></a>���ʽ���</h3><ul>
+<li>Workspace��������</li>
+<li>Index/Stage���ݴ���</li>
+<li>Repository���ֿ������򱾵زֿ�����</li>
+<li>Remote��Զ�ֿ̲�</li>
+</ul>
+<h4 id="1-�½������"><a href="#1-�½������" class="headerlink" title="1. �½������"></a>1. �½������</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># �ڵ�ǰĿ¼�½�һ��Git�����</span><br><span class="line">$ git init</span><br><span class="line"></span><br><span class="line"># �½�һ��Ŀ¼�������ʼ��ΪGit�����</span><br><span class="line">$ git init [project-name]</span><br><span class="line"></span><br><span class="line"># ����һ����Ŀ����������������ʷ</span><br><span class="line">$ git clone [url]</span><br></pre></td></tr></table></figure>
+<h4 id="2-����"><a href="#2-����" class="headerlink" title="2. ����"></a>2. ����</h4><p>Git�������ļ�Ϊ.gitconfig�����������û���Ŀ¼�£�ȫ�����ã���Ҳ��������ĿĿ¼�£���Ŀ���ã���</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># ��ʾ��ǰ��Git����</span><br><span class="line">$ git config --list</span><br><span class="line"></span><br><span class="line"># �༭Git�����ļ�</span><br><span class="line">$ git config -e [--global]</span><br><span class="line"></span><br><span class="line"># �����ύ����ʱ���û���Ϣ</span><br><span class="line">$ git config [--global] user.name &quot;[name]&quot;</span><br><span class="line">$ git config [--global] user.email &quot;[email address]&quot;</span><br></pre></td></tr></table></figure>
+<h4 id="3-����-ɾ���l�"><a href="#3-����-ɾ���l�" class="headerlink" title="3. ����/ɾ���ļ�"></a>3. ����/ɾ���ļ�</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"># ���ָ���ļ����ݴ���</span><br><span class="line">$ git add [file1] [file2] ...</span><br><span class="line"></span><br><span class="line"># ���ָ��Ŀ¼���ݴ�����������Ŀ¼</span><br><span class="line">$ git add [dir]</span><br><span class="line"></span><br><span class="line"># ��ӵ�ǰĿ¼�������ļ����ݴ���</span><br><span class="line">$ git add .</span><br><span class="line"></span><br><span class="line"># ���ÿ���仯ǰ������Ҫ��ȷ��</span><br><span class="line"># ����ͬһ���ļ��Ķദ�仯������ʵ�ִַ��ύ</span><br><span class="line">$ git add -p</span><br><span class="line"></span><br><span class="line"># ɾ���������ļ������ҽ����ɾ�������ݴ���</span><br><span class="line">$ git rm [file1] [file2] ...</span><br><span class="line"></span><br><span class="line"># ֹͣ׷��ָ���ļ��������ļ��ᱣ���ڹ�����</span><br><span class="line">$ git rm --cached [file]</span><br><span class="line"></span><br><span class="line"># �����ļ������ҽ�������������ݴ���</span><br><span class="line">$ git mv [file-original] [file-renamed]</span><br></pre></td></tr></table></figure>
+<h4 id="4-�����ύ"><a href="#4-�����ύ" class="headerlink" title="4. �����ύ"></a>4. �����ύ</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># �ύ�ݴ������ֿ���</span><br><span class="line">$ git commit -m [message]</span><br><span class="line"></span><br><span class="line"># �ύ�ݴ�����ָ���ļ����ֿ���</span><br><span class="line">$ git commit [file1] [file2] ... -m [message]</span><br><span class="line"></span><br><span class="line"># �ύ���������ϴ�commit֮��ı仯��ֱ�ӵ��ֿ���</span><br><span class="line">$ git commit -a</span><br><span class="line"></span><br><span class="line"># �ύʱ��ʾ����diff��Ϣ</span><br><span class="line">$ git commit -v</span><br><span class="line"></span><br><span class="line"># ʹ��һ���µ�commit�������һ���ύ</span><br><span class="line"># �������û���κ��±仯����������д��һ��commit���ύ��Ϣ</span><br><span class="line">$ git commit --amend -m [message]</span><br><span class="line"></span><br><span class="line"># ������һ��commit��������ָ���ļ����±仯</span><br><span class="line">$ git commit --amend [file1] [file2] ...</span><br></pre></td></tr></table></figure>
+<h4 id="5-��֧"><a href="#5-��֧" class="headerlink" title="5. ��֧"></a>5. ��֧</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"># �г����б��ط�֧</span><br><span class="line">$ git branch</span><br><span class="line"></span><br><span class="line"># �г�����Զ�̷�֧</span><br><span class="line">$ git branch -r</span><br><span class="line"></span><br><span class="line"># �г����б��ط�֧��Զ�̷�֧</span><br><span class="line">$ git branch -a</span><br><span class="line"></span><br><span class="line"># �½�һ����֧������Ȼͣ���ڵ�ǰ��֧</span><br><span class="line">$ git branch [branch-name]</span><br><span class="line"></span><br><span class="line"># �½�һ����֧�����л����÷�֧</span><br><span class="line">$ git checkout -b [branch]</span><br><span class="line"></span><br><span class="line"># �½�һ����֧��ָ��ָ��commit</span><br><span class="line">$ git branch [branch] [commit]</span><br><span class="line"></span><br><span class="line"># �½�һ����֧����ָ����Զ�̷�֧����׷�ٹ�ϵ</span><br><span class="line">$ git branch --track [branch] [remote-branch]</span><br><span class="line"></span><br><span class="line"># �л���ָ����֧�������¹�����</span><br><span class="line">$ git checkout [branch-name]</span><br><span class="line"></span><br><span class="line"># �л�����һ����֧</span><br><span class="line">$ git checkout -</span><br><span class="line"></span><br><span class="line"># ����׷�ٹ�ϵ�������з�֧��ָ����Զ�̷�֧֮��</span><br><span class="line">$ git branch --set-upstream [branch] [remote-branch]</span><br><span class="line"></span><br><span class="line"># �ϲ�ָ����֧����ǰ��֧</span><br><span class="line">$ git merge [branch]</span><br><span class="line"></span><br><span class="line"># ѡ��һ��commit���ϲ�����ǰ��֧</span><br><span class="line">$ git cherry-pick [commit]</span><br><span class="line"></span><br><span class="line"># ɾ����֧</span><br><span class="line">$ git branch -d [branch-name]</span><br><span class="line"></span><br><span class="line"># ɾ��Զ�̷�֧</span><br><span class="line">$ git push origin --delete [branch-name]</span><br><span class="line">$ git branch -dr [remote/branch]</span><br></pre></td></tr></table></figure>
+<h4 id="6-��k"><a href="#6-��k" class="headerlink" title="6. ��ǩ"></a>6. ��ǩ</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"># �г�����tag</span><br><span class="line">$ git tag</span><br><span class="line"></span><br><span class="line"># �½�һ��tag�ڵ�ǰcommit</span><br><span class="line">$ git tag [tag]</span><br><span class="line"></span><br><span class="line"># �½�һ��tag��ָ��commit</span><br><span class="line">$ git tag [tag] [commit]</span><br><span class="line"></span><br><span class="line"># ɾ������tag</span><br><span class="line">$ git tag -d [tag]</span><br><span class="line"></span><br><span class="line"># ɾ��Զ��tag</span><br><span class="line">$ git push origin :refs/tags/[tagName]</span><br><span class="line"></span><br><span class="line"># �鿴tag��Ϣ</span><br><span class="line">$ git show [tag]</span><br><span class="line"></span><br><span class="line"># �ύָ��tag</span><br><span class="line">$ git push [remote] [tag]</span><br><span class="line"></span><br><span class="line"># �ύ����tag</span><br><span class="line">$ git push [remote] --tags</span><br><span class="line"></span><br><span class="line"># �½�һ����֧��ָ��ĳ��tag</span><br><span class="line">$ git checkout -b [branch] [tag]</span><br></pre></td></tr></table></figure>
+<h4 id="7-�鿴��Ϣ"><a href="#7-�鿴��Ϣ" class="headerlink" title="7. �鿴��Ϣ"></a>7. �鿴��Ϣ</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"># ��ʾ�б�����ļ�</span><br><span class="line">$ git status</span><br><span class="line"></span><br><span class="line"># ��ʾ��ǰ��֧�İ汾��ʷ</span><br><span class="line">$ git log</span><br><span class="line"></span><br><span class="line"># ��ʾcommit��ʷ���Լ�ÿ��commit����������ļ�</span><br><span class="line">$ git log --stat</span><br><span class="line"></span><br><span class="line"># �����ύ��ʷ�����ݹؼ���</span><br><span class="line">$ git log -S [keyword]</span><br><span class="line"></span><br><span class="line"># ��ʾĳ��commit֮������б䶯��ÿ��commitռ��һ��</span><br><span class="line">$ git log [tag] HEAD --pretty=format:%s</span><br><span class="line"></span><br><span class="line"># ��ʾĳ��commit֮������б䶯����&quot;�ύ˵��&quot;���������������</span><br><span class="line">$ git log [tag] HEAD --grep feature</span><br><span class="line"></span><br><span class="line"># ��ʾĳ���ļ��İ汾��ʷ�������ļ�����</span><br><span class="line">$ git log --follow [file]</span><br><span class="line">$ git whatchanged [file]</span><br><span class="line"></span><br><span class="line"># ��ʾָ���ļ���ص�ÿһ��diff</span><br><span class="line">$ git log -p [file]</span><br><span class="line"></span><br><span class="line"># ��ʾ��ȥ5���ύ</span><br><span class="line">$ git log -5 --pretty --oneline</span><br><span class="line"></span><br><span class="line"># ��ʾ�����ύ�����û������ύ��������</span><br><span class="line">$ git shortlog -sn</span><br><span class="line"></span><br><span class="line"># ��ʾָ���ļ���ʲô����ʲôʱ���޸Ĺ�</span><br><span class="line">$ git blame [file]</span><br><span class="line"></span><br><span class="line"># ��ʾ�ݴ����͹������Ĳ���</span><br><span class="line">$ git diff</span><br><span class="line"></span><br><span class="line"># ��ʾ�ݴ�������һ��commit�Ĳ���</span><br><span class="line">$ git diff --cached [file]</span><br><span class="line"></span><br><span class="line"># ��ʾ�������뵱ǰ��֧����commit֮��Ĳ���</span><br><span class="line">$ git diff HEAD</span><br><span class="line"></span><br><span class="line"># ��ʾ�����ύ֮��Ĳ���</span><br><span class="line">$ git diff [first-branch]...[second-branch]</span><br><span class="line"></span><br><span class="line"># ��ʾ������д�˶����д���</span><br><span class="line">$ git diff --shortstat &quot;@&#123;0 day ago&#125;&quot;</span><br><span class="line"></span><br><span class="line"># ��ʾĳ���ύ��Ԫ���ݺ����ݱ仯</span><br><span class="line">$ git show [commit]</span><br><span class="line"></span><br><span class="line"># ��ʾĳ���ύ�����仯���ļ�</span><br><span class="line">$ git show --name-only [commit]</span><br><span class="line"></span><br><span class="line"># ��ʾĳ���ύʱ��ĳ���ļ�������</span><br><span class="line">$ git show [commit]:[filename]</span><br><span class="line"></span><br><span class="line"># ��ʾ��ǰ��֧����������ύ</span><br><span class="line">$ git reflog</span><br></pre></td></tr></table></figure>
+<h4 id="8-Զ��ͬ��"><a href="#8-Զ��ͬ��" class="headerlink" title="8. Զ��ͬ��"></a>8. Զ��ͬ��</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># ����Զ�ֿ̲�����б䶯</span><br><span class="line">$ git fetch [remote]</span><br><span class="line"></span><br><span class="line"># ��ʾ����Զ�ֿ̲�</span><br><span class="line">$ git remote -v</span><br><span class="line"></span><br><span class="line"># ��ʾĳ��Զ�ֿ̲����Ϣ</span><br><span class="line">$ git remote show [remote]</span><br><span class="line"></span><br><span class="line"># ����һ���µ�Զ�ֿ̲⣬������</span><br><span class="line">$ git remote add [shortname] [url]</span><br><span class="line"></span><br><span class="line"># ȡ��Զ�ֿ̲�ı仯�����뱾�ط�֧�ϲ�</span><br><span class="line">$ git pull [remote] [branch]</span><br><span class="line"></span><br><span class="line"># �ϴ�����ָ����֧��Զ�ֿ̲�</span><br><span class="line">$ git push [remote] [branch]</span><br><span class="line"></span><br><span class="line"># ǿ�����͵�ǰ��֧��Զ�ֿ̲⣬��ʹ�г�ͻ</span><br><span class="line">$ git push [remote] --force</span><br><span class="line"></span><br><span class="line"># �������з�֧��Զ�ֿ̲�</span><br><span class="line">$ git push [remote] --all</span><br></pre></td></tr></table></figure>
+<h4 id="9-����"><a href="#9-����" class="headerlink" title="9. ����"></a>9. ����</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"># �ָ��ݴ�����ָ���ļ���������</span><br><span class="line">$ git checkout [file]</span><br><span class="line"></span><br><span class="line"># �ָ�ĳ��commit��ָ���ļ����ݴ����͹�����</span><br><span class="line">$ git checkout [commit] [file]</span><br><span class="line"></span><br><span class="line"># �ָ��ݴ����������ļ���������</span><br><span class="line">$ git checkout .</span><br><span class="line"></span><br><span class="line"># �����ݴ�����ָ���ļ�������һ��commit����һ�£�������������</span><br><span class="line">$ git reset [file]</span><br><span class="line"></span><br><span class="line"># �����ݴ����빤����������һ��commit����һ��</span><br><span class="line">$ git reset --hard</span><br><span class="line"></span><br><span class="line"># ���õ�ǰ��֧��ָ��Ϊָ��commit��ͬʱ�����ݴ�����������������</span><br><span class="line">$ git reset [commit]</span><br><span class="line"></span><br><span class="line"># ���õ�ǰ��֧��HEADΪָ��commit��ͬʱ�����ݴ����͹���������ָ��commitһ��</span><br><span class="line">$ git reset --hard [commit]</span><br><span class="line"></span><br><span class="line"># ���õ�ǰHEADΪָ��commit���������ݴ����͹���������</span><br><span class="line">$ git reset --keep [commit]</span><br><span class="line"></span><br><span class="line"># �½�һ��commit����������ָ��commit</span><br><span class="line"># ���ߵ����б仯������ǰ�ߵ���������Ӧ�õ���ǰ��֧</span><br><span class="line">$ git revert [commit]</span><br><span class="line"></span><br><span class="line"># ��ʱ��δ�ύ�ı仯�Ƴ����Ժ�������</span><br><span class="line">$ git stash</span><br><span class="line">$ git stash pop</span><br></pre></td></tr></table></figure>
+<h4 id="10-����"><a href="#10-����" class="headerlink" title="10. ����"></a>10. ����</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># ����һ���ɹ�������ѹ����</span><br><span class="line">$ git archive</span><br></pre></td></tr></table></figure>
+<h2 id="����GitHubԶ�ֿ̲�"><a href="#����GitHubԶ�ֿ̲�" class="headerlink" title="����GitHubԶ�ֿ̲�"></a>����GitHubԶ�ֿ̲�</h2><p>����<a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>��վ��ע��һ��GitHub�˺š�</p>
+<p>������ı���Git�ֿ��GitHub�ֿ�֮��Ĵ�����ͨ��SSH���ܵģ�������Ҫ�����������ã�</p>
+<ol>
+<li>����SSH Key�����û���Ŀ¼�£�������û��.sshĿ¼������У��ٿ������Ŀ¼����û��id_rsa��id_rsa.pub�������ļ�������Ѿ����ˣ���ֱ��������һ�������û�У���Shell��Windows�´�Git Bash��������SSH Key��<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>�������������س�����ִ�гɹ����������û���Ŀ¼���ҵ�.sshĿ¼��������id_rsa��id_rsa.pub�����ļ�������������SSH Key����Կ�ԣ�id_rsa��˽Կ������й¶��ȥ��id_rsa.pub�ǹ�Կ�����Է��ĵظ����κ��ˡ�</p>
+<ol>
+<li>��½GitHub���򿪡�Account settings������SSH Keys��ҳ�棺Ȼ�󣬵㡰Add SSH Key������������Title����Key�ı�����ճ��id_rsa.pub�ļ������ݡ�</li>
+</ol>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/��������/">��������</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2018/03/10/Git入门介绍/" data-title="Git���Ž��� | Michael的博客" data-tsina="" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2018/03/15/hexo搭建个人静态博客网站/" title="Hexo����˾�̬������վ">
+  <strong>上一篇：</strong><br/>
+  <span>
+  Hexo����˾�̬������վ</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2018/02/10/API设计原则/"  title="API���ԭ��">
+ <strong>下一篇：</strong><br/> 
+ <span>API���ԭ��
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Git���"><span class="toc-number">1.</span> <span class="toc-text">Git���</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ʲo��Git"><span class="toc-number">1.1.</span> <span class="toc-text">ʲô��Git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git��װ"><span class="toc-number">1.2.</span> <span class="toc-text">Git��װ</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#��������"><span class="toc-number">1.3.</span> <span class="toc-text">��������</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#��֧����"><span class="toc-number">2.</span> <span class="toc-text">��֧����</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git��������"><span class="toc-number">3.</span> <span class="toc-text">Git��������</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#���ʽ���"><span class="toc-number">3.1.</span> <span class="toc-text">���ʽ���</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-�½������"><span class="toc-number">3.1.1.</span> <span class="toc-text">1. �½������</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-����"><span class="toc-number">3.1.2.</span> <span class="toc-text">2. ����</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-����-ɾ���l�"><span class="toc-number">3.1.3.</span> <span class="toc-text">3. ����/ɾ���ļ�</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-�����ύ"><span class="toc-number">3.1.4.</span> <span class="toc-text">4. �����ύ</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-��֧"><span class="toc-number">3.1.5.</span> <span class="toc-text">5. ��֧</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-��k"><span class="toc-number">3.1.6.</span> <span class="toc-text">6. ��ǩ</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-�鿴��Ϣ"><span class="toc-number">3.1.7.</span> <span class="toc-text">7. �鿴��Ϣ</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-Զ��ͬ��"><span class="toc-number">3.1.8.</span> <span class="toc-text">8. Զ��ͬ��</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-����"><span class="toc-number">3.1.9.</span> <span class="toc-text">9. ����</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-����"><span class="toc-number">3.1.10.</span> <span class="toc-text">10. ����</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#����GitHubԶ�ֿ̲�"><span class="toc-number">4.</span> <span class="toc-text">����GitHubԶ�ֿ̲�</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/������/" title="������">������<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/��������/" title="��������">��������<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/��վ/" title="��վ">��վ<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/�������/" title="�������">�������<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://github.com/baoxielin/" target="_blank" title="我的GitHub主页">Github</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://toutiao.io/" target="_blank" title="程序员首选阅读分享平台">开发者头条</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://blog.jobbole.com/" target="_blank" title="专注于分享IT互联网相关的文章">伯乐在线</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://juejin.im/" target="_blank" title="高质量的技术社区">稀土掘金</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.android-studio.org/" target="_blank" title="AndroidStudio中文社区">AndroidStudio中文社区</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.oschina.net/" target="_blank" title="开源中国社区">开源中国社区</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://martinfowler.com/" target="_blank" title="MartinFlower">MartinFlower</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://coolshell.cn/" target="_blank" title="酷壳">酷壳</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.luanxiang.org/" target="_blank" title="乱象，印迹">乱象，印迹</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://blog.csdn.net/guolin_blog/" target="_blank" title="郭霖专栏">郭霖专栏</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://blog.csdn.net/xlgen157387" target="_blank" title="徐刘根的博客">徐刘根的博客</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.liaoxuefeng.com/" target="_blank" title="廖雪峰的官方网站">廖雪峰的官方网站</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.buzzfeed.com/" target="_blank" title="BuzzFeeD">BuzzFeeD</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> 交流促进思考，沟通产生价值 <br/>
+			落霞与孤鹜起飞，秋水共长天一色</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		<a href="https://github.com/https://github.com/baoxielin/" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<a href="mailto:baoxielin@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2018 
+		
+		<a href="/about" target="_blank" title="Michael">Michael</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
