@@ -4,25 +4,25 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Android开发能力要求 | Michael的博客</title>
+    <title>软件设计学习大纲 | Michael的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Michael">
     
 
     
-    <meta name="description" content="阅读程序的能力在尽可能短的时间内了解软件的整体架构和各模块间的交互关系，掌握主体的业务流程。 编码能力熟练掌握Java面向对象编程语言，具备良好的编程习惯并遵循通用的编程规范，编写出易读和易维护的代码。 调试和测试能力掌握软件的基本调试和测试能力，如通过断点跟踪、日志输出分析定位问题，熟练使用IDE(AndroidStudio)中提供的各种调试和分析工具，具备基本的黑盒和单元自测试能力。 软件基">
+    <meta name="description" content="软件设计原则 Don’t Repeat Yourself (DRY)  Keep It Simple, Stupid(KISS)  针对接口编程，而不是实现  You Ain’t Gonna Need It (YAGNI)：如无必要，勿增复杂性  迪米特法则 (Law of Demeter)：最少知识原则  面向对象的 S.O.L.I.D 原则  SRP单一职责原则：一个类只有一个引起变化的原因">
 <meta name="keywords" content="软件开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android开发能力要求">
-<meta property="og:url" content="http://yoursite.com/2018/03/10/Android开发能力要求/index.html">
+<meta property="og:title" content="软件设计学习大纲">
+<meta property="og:url" content="http://yoursite.com/2018/02/10/软件设计学习大纲/index.html">
 <meta property="og:site_name" content="Michael的博客">
-<meta property="og:description" content="阅读程序的能力在尽可能短的时间内了解软件的整体架构和各模块间的交互关系，掌握主体的业务流程。 编码能力熟练掌握Java面向对象编程语言，具备良好的编程习惯并遵循通用的编程规范，编写出易读和易维护的代码。 调试和测试能力掌握软件的基本调试和测试能力，如通过断点跟踪、日志输出分析定位问题，熟练使用IDE(AndroidStudio)中提供的各种调试和分析工具，具备基本的黑盒和单元自测试能力。 软件基">
+<meta property="og:description" content="软件设计原则 Don’t Repeat Yourself (DRY)  Keep It Simple, Stupid(KISS)  针对接口编程，而不是实现  You Ain’t Gonna Need It (YAGNI)：如无必要，勿增复杂性  迪米特法则 (Law of Demeter)：最少知识原则  面向对象的 S.O.L.I.D 原则  SRP单一职责原则：一个类只有一个引起变化的原因">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2018-08-27T02:46:48.659Z">
+<meta property="og:updated_time" content="2018-08-27T02:54:05.540Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android开发能力要求">
-<meta name="twitter:description" content="阅读程序的能力在尽可能短的时间内了解软件的整体架构和各模块间的交互关系，掌握主体的业务流程。 编码能力熟练掌握Java面向对象编程语言，具备良好的编程习惯并遵循通用的编程规范，编写出易读和易维护的代码。 调试和测试能力掌握软件的基本调试和测试能力，如通过断点跟踪、日志输出分析定位问题，熟练使用IDE(AndroidStudio)中提供的各种调试和分析工具，具备基本的黑盒和单元自测试能力。 软件基">
+<meta name="twitter:title" content="软件设计学习大纲">
+<meta name="twitter:description" content="软件设计原则 Don’t Repeat Yourself (DRY)  Keep It Simple, Stupid(KISS)  针对接口编程，而不是实现  You Ain’t Gonna Need It (YAGNI)：如无必要，勿增复杂性  迪米特法则 (Law of Demeter)：最少知识原则  面向对象的 S.O.L.I.D 原则  SRP单一职责原则：一个类只有一个引起变化的原因">
 
     
     <link rel="alternative" href="/atom.xml" title="Michael的博客" type="application/atom+xml">
@@ -82,14 +82,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2018/03/10/Android开发能力要求/" title="Android开发能力要求" itemprop="url">Android开发能力要求</a>
+      <a href="/2018/02/10/软件设计学习大纲/" title="软件设计学习大纲" itemprop="url">软件设计学习大纲</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Michael" target="_blank" itemprop="author">Michael</a>
 		
   <p class="article-time">
-    <time datetime="2018-03-10T00:00:00.000Z" itemprop="datePublished"> 發表於 2018-03-10</time>
+    <time datetime="2018-02-10T00:00:00.000Z" itemprop="datePublished"> 發表於 2018-02-10</time>
     
   </p>
 </header>
@@ -98,17 +98,172 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目錄</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#阅读程序的能力"><span class="toc-number">1.</span> <span class="toc-text">阅读程序的能力</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编码能力"><span class="toc-number">2.</span> <span class="toc-text">编码能力</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#调试和测试能力"><span class="toc-number">3.</span> <span class="toc-text">调试和测试能力</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#软件基础知识"><span class="toc-number">4.</span> <span class="toc-text">软件基础知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#软件设计能力"><span class="toc-number">5.</span> <span class="toc-text">软件设计能力</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#独立解决问题能力"><span class="toc-number">6.</span> <span class="toc-text">独立解决问题能力</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#快速自学能力"><span class="toc-number">7.</span> <span class="toc-text">快速自学能力</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#软件设计原则"><span class="toc-number">1.</span> <span class="toc-text">软件设计原则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计模式"><span class="toc-number">2.</span> <span class="toc-text">设计模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#软件应用架构"><span class="toc-number">3.</span> <span class="toc-text">软件应用架构</span></a></li></ol>
 		
 		</div>
 		
-		<script src="\assets\js\APlayer.min.js"> </script><h2 id="阅读程序的能力"><a href="#阅读程序的能力" class="headerlink" title="阅读程序的能力"></a>阅读程序的能力</h2><p>在尽可能短的时间内了解软件的整体架构和各模块间的交互关系，掌握主体的业务流程。</p>
-<h2 id="编码能力"><a href="#编码能力" class="headerlink" title="编码能力"></a>编码能力</h2><p>熟练掌握Java面向对象编程语言，具备良好的编程习惯并遵循通用的编程规范，编写出易读和易维护的代码。</p>
-<h2 id="调试和测试能力"><a href="#调试和测试能力" class="headerlink" title="调试和测试能力"></a>调试和测试能力</h2><p>掌握软件的基本调试和测试能力，如通过断点跟踪、日志输出分析定位问题，熟练使用IDE(AndroidStudio)中提供的各种调试和分析工具，具备基本的黑盒和单元自测试能力。</p>
-<h2 id="软件基础知识"><a href="#软件基础知识" class="headerlink" title="软件基础知识"></a>软件基础知识</h2><p>熟悉并了解操作系统、数据结构、算法、计算机组成等软件基础知识概念和原理。</p>
-<h2 id="软件设计能力"><a href="#软件设计能力" class="headerlink" title="软件设计能力"></a>软件设计能力</h2><p>具备基本的软件模块化设计思想和能力，软件项目的组织和逻辑结构必须划分合理，结构清晰。</p>
-<h2 id="独立解决问题能力"><a href="#独立解决问题能力" class="headerlink" title="独立解决问题能力"></a>独立解决问题能力</h2><p>能够快速定位、分析问题的原因，并给出对应的解决方法/方案的能力。</p>
-<h2 id="快速自学能力"><a href="#快速自学能力" class="headerlink" title="快速自学能力"></a>快速自学能力</h2><p>具备快速自学新技术、新工具并掌握使用的能力。</p>
+		<script src="\assets\js\APlayer.min.js"> </script><h2 id="软件设计原则"><a href="#软件设计原则" class="headerlink" title="软件设计原则"></a>软件设计原则</h2><ul>
+<li><p>Don’t Repeat Yourself (DRY)</p>
+</li>
+<li><p>Keep It Simple, Stupid(KISS)</p>
+</li>
+<li><p>针对接口编程，而不是实现</p>
+</li>
+<li><p>You Ain’t Gonna Need It (YAGNI)：如无必要，勿增复杂性</p>
+</li>
+<li><p>迪米特法则 (Law of Demeter)：最少知识原则</p>
+</li>
+<li><p>面向对象的 S.O.L.I.D 原则</p>
+<ul>
+<li>SRP单一职责原则：一个类只有一个引起变化的原因。</li>
+<li>OCP开闭原则：一个软件实体应当对扩展开放，对修改关闭。</li>
+<li>LSP里式替换原则：子类型必须能够替换它们的基类型。</li>
+<li>ISP接口隔离原则：使用多个专门的接口比使用单一的总接口总要好。</li>
+<li>DIP依赖倒置原则：高层模块不依赖于底层模块，二者都依赖其抽象；抽象不依赖于细节，细节应该依赖抽象。</li>
+</ul>
+</li>
+</ul>
+<p>软件设计读物推荐：</p>
+<ul>
+<li>《深入浅出设计模式》</li>
+<li>《Clean Architecture》</li>
+<li>《领域驱动设计》</li>
+<li>《实现领域驱动设计》</li>
+</ul>
+<h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><ul>
+<li>简单工厂模式(Factory)</li>
+</ul>
+<ul>
+<li>提供创建对象的接口，封装对象具体的创建过程。</li>
+</ul>
+<ul>
+<li>工厂方法模式(FactoryMethod)</li>
+</ul>
+<ul>
+<li>定义一个用于创建对象的接口，由子类决定将哪一个类实例化，工厂方法使一个类的实例化延迟到其子类。</li>
+</ul>
+<ul>
+<li>抽象工厂模式(Abstract Factory)</li>
+</ul>
+<ul>
+<li>提供一个创建一系列相关或相互依赖对象的接口，而无需指定它们具体的类。</li>
+</ul>
+<ul>
+<li>观察者模式(Observer)</li>
+</ul>
+<ul>
+<li>定义对象间的一种一对多的依赖关系，以便当一个对象的状态发生改变时，所有依赖于它的对象都得到通知并刷新。</li>
+</ul>
+<ul>
+<li>命令模式(Command)</li>
+</ul>
+<ul>
+<li>将一个请求封装成一个对象，从而使你可用不同的请求对客户进行参数化；对请求排队或记录请求日志，以及支持可取消的操作。</li>
+</ul>
+<ul>
+<li>策略模式(Strategy)</li>
+</ul>
+<ul>
+<li>定义一系列的算法，把它们一个个封装起来，并且使它们可以相互替换；本模式使得算法的变化可独立于使用它的客户。</li>
+</ul>
+<ul>
+<li>模板方法模式(TemplateMethod)</li>
+</ul>
+<ul>
+<li>定义一个操作中的算法骨架，而将一些步骤延迟到子类中；模板方法使得子类可以不改变一个算法的结构即可重定义算法的某些特定步骤。</li>
+</ul>
+<ul>
+<li>代理模式(Proxy)</li>
+</ul>
+<ul>
+<li>为其他对象提供一个代理以控制对这个对象的访问。</li>
+</ul>
+<ul>
+<li>适配器模式(Adapter)</li>
+</ul>
+<ul>
+<li>将一个类的接口转换成客户希望的另一个接口；Adapter模式使得原本由于接口不兼容而不能一起工作的那些类可以一起工作。</li>
+</ul>
+<ul>
+<li>装饰器模式(Decorator)</li>
+</ul>
+<ul>
+<li>动态地给一个对象添加一些额外的职责，就扩展性而言，Decorator模式比生成子类方式更为灵活。</li>
+</ul>
+<ul>
+<li>单例模式(Singleton)</li>
+</ul>
+<ul>
+<li>保证一个类仅有一个实例，并提供一个访问它的全局访问点。</li>
+</ul>
+<ul>
+<li>组合模式(Composite)</li>
+</ul>
+<ul>
+<li>将对象组合成树形结构以表示部分-整体的层次结构，Composite模式使得客户对单个对象和复合对象的使用具有一致性。</li>
+</ul>
+<ul>
+<li>职责链模式(Chain of Responsibility)</li>
+</ul>
+<ul>
+<li>为解除请求的发送者和接收者之间的耦合，而使多个对象都有机会处理这个请求；将这些对象连成一条链，并沿着这条链传递该请求，直到有一个对象处理它。</li>
+</ul>
+<ul>
+<li>构建者模式(Builder)</li>
+</ul>
+<ul>
+<li>将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。</li>
+</ul>
+<ul>
+<li>外观模式(Facade)</li>
+</ul>
+<ul>
+<li>为子系统中的一组接口提供一个一致的界面，Facade模式定义了一个高层接口，这个接口使得这个子系统更加易于使用。</li>
+</ul>
+<ul>
+<li>桥接模式(Bridge)</li>
+</ul>
+<ul>
+<li>将抽象部分与它的实现部分分离，使它们都可以独立的变化。</li>
+</ul>
+<ul>
+<li>迭代模式(Iterator)</li>
+</ul>
+<ul>
+<li>提供一种方法顺序访问一个聚合对象中各个元素，而又不需要暴露该对象的内部表示。</li>
+</ul>
+<ul>
+<li>访问者模式(Visitor)</li>
+</ul>
+<ul>
+<li>表示一个作用于某对象结构中的各元素的操作；它使你可以在不改变各元素的类的前提下定义作用于这些元素的新操作。</li>
+</ul>
+<h2 id="软件应用架构"><a href="#软件应用架构" class="headerlink" title="软件应用架构"></a>软件应用架构</h2><ul>
+<li><p>经典分层架构</p>
+<ul>
+<li>表示层</li>
+<li>领域层</li>
+<li>数据源层</li>
+</ul>
+</li>
+<li><p>Android主流应用架构</p>
+<ul>
+<li>经典MVC架构</li>
+<li>MVP架构</li>
+<li>MVVM架构</li>
+<li>Clean Architecture架构</li>
+</ul>
+</li>
+<li><p>软件架构模式</p>
+<ul>
+<li>分层架构</li>
+<li>事件驱动架构</li>
+<li>微内核架构</li>
+<li>微服务架构</li>
+<li>基于空间的架构</li>
+</ul>
+</li>
+</ul>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -126,7 +281,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2018/03/10/Android开发能力要求/" data-title="Android开发能力要求 | Michael的博客" data-tsina="" class="share clearfix">
+	  <div data-url="http://yoursite.com/2018/02/10/软件设计学习大纲/" data-title="软件设计学习大纲 | Michael的博客" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -140,21 +295,13 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2018/03/10/API设计原则/" title="API设计原则">
+ <a href="/2018/03/10/Android开发能力要求/" title="Android开发能力要求">
   <strong>上一篇：</strong><br/>
   <span>
-  API设计原则</span>
+  Android开发能力要求</span>
 </a>
 </div>
 
-
-<div class="next">
-<a href="/2018/02/10/软件设计学习大纲/"  title="软件设计学习大纲">
- <strong>下一篇：</strong><br/> 
- <span>软件设计学习大纲
-</span>
-</a>
-</div>
 
 </nav>
 
@@ -168,7 +315,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目錄</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#阅读程序的能力"><span class="toc-number">1.</span> <span class="toc-text">阅读程序的能力</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编码能力"><span class="toc-number">2.</span> <span class="toc-text">编码能力</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#调试和测试能力"><span class="toc-number">3.</span> <span class="toc-text">调试和测试能力</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#软件基础知识"><span class="toc-number">4.</span> <span class="toc-text">软件基础知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#软件设计能力"><span class="toc-number">5.</span> <span class="toc-text">软件设计能力</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#独立解决问题能力"><span class="toc-number">6.</span> <span class="toc-text">独立解决问题能力</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#快速自学能力"><span class="toc-number">7.</span> <span class="toc-text">快速自学能力</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#软件设计原则"><span class="toc-number">1.</span> <span class="toc-text">软件设计原则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计模式"><span class="toc-number">2.</span> <span class="toc-text">设计模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#软件应用架构"><span class="toc-number">3.</span> <span class="toc-text">软件应用架构</span></a></li></ol>
  
   </div>
 
